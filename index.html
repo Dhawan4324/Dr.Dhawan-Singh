@@ -11,91 +11,137 @@
 <meta name="robots" content="index,follow">
 <style>
   :root{
-    --ink:#111827; --muted:#4b5563; --line:#e5e7eb; --bg:#fafafa; --chip:#f3f4f6; --accent:#111827;
+    /* Color system */
+    --bg: #f8fafc;
+    --panel: #ffffff;
+    --ink: #0f172a;        /* slate-900 */
+    --muted:#475569;       /* slate-600 */
+    --line:#e2e8f0;        /* slate-200 */
+    --chip:#f1f5f9;        /* slate-100 */
+    --accent:#2563eb;      /* blue-600 */
+    --accent-2:#7c3aed;    /* violet-600 */
+    --accent-3:#10b981;    /* emerald-500 */
   }
-  *{box-sizing:border-box}   
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji";}
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,"Apple Color Emoji","Segoe UI Emoji";}
   a{color:var(--accent);text-underline-offset:2px}
-  .wrap{max-width:960px;margin:0 auto;padding:24px}
-  header h1{margin:0 0 6px 0;font-size:28px;line-height:1.15;font-weight:800}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px}
+
+  /* Header */
+  header{
+    display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    background: linear-gradient(135deg, #eef2ff 0%, #ecfeff 35%, #f0f9ff 100%);
+    border:1px solid var(--line);border-radius:20px;padding:18px 20px;
+    box-shadow: 0 6px 24px rgba(2,6,23,0.06);
+  }
+  header h1{margin:0 0 6px 0;font-size:30px;line-height:1.15;font-weight:800}
   header .headline{font-size:16px;color:var(--ink);margin:0 0 8px 0}
   header .meta{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
   header .meta span, header .meta a{white-space:nowrap}
-  .grid{display:grid;grid-template-columns:1fr;gap:16px}
-  @media(min-width:900px){.grid{grid-template-columns: minmax(0,2fr) minmax(0,1fr);}}
-  section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
-  h3{margin:0 0 8px 0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#6b7280}
+
+  .avatar{width:112px;height:112px;border-radius:50%;
+    border:3px solid #fff; outline:2px solid var(--line); object-fit:cover;display:block;
+    box-shadow:0 6px 18px rgba(2,6,23,0.15);
+  }
+
+  /* Grid & Panels */
+  .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:16px}
+  @media(min-width:980px){.grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr);}}
+  section{
+    background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;
+    box-shadow: 0 4px 16px rgba(2,6,23,0.05);
+  }
+  h3{margin:0 0 8px 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#64748b}
   p{margin:6px 0}
   ul{margin:6px 0 0 18px}
-  .chip{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--chip);border-radius:999px;padding:4px 10px;margin:4px 6px 0 0;font-size:12px}
+
+  /* Chips */
+  .chip{
+    display:inline-flex;align-items:center;border:1px solid var(--line);
+    background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);
+    border-radius:999px;padding:6px 12px;margin:6px 8px 0 0;font-size:12px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
+  }
+  .chip--accent{background:linear-gradient(135deg,#eff6ff 0%,#eef2ff 100%);border-color:#dbeafe}
+
+  /* Timeline rows */
   .row{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
-  .role{font-weight:600}
-  .org{color:#374151}
-  .when{margin-left:auto;color:#6b7280;font-size:12px}
-  .avatar{width:110px;height:110px;border-radius:50%;border:2px solid var(--line);object-fit:cover;display:block}
+  .role{font-weight:700}
+  .org{color:#334155}
+  .when{margin-left:auto;color:#64748b;font-size:12px}
+
+  /* Footer */
   footer{margin:18px 0 0 0;color:var(--muted);font-size:12px;text-align:center}
-  /* Print to one page */
+
+  /* Print one page */
   @media print{
     @page{size:A4;margin:12mm}
     body{background:#fff}
     .wrap{padding:0}
+    header{background:#fff}
     a{text-decoration:none;color:inherit}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-<header style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px">
-  <div style="display:flex;gap:16px;align-items:center;flex:1 1 auto;min-width:0">
-    <!-- Profile Photo -->
-    <div style="flex-shrink:0">
-      <img src="dhawan.jpg" alt="Prof (Dr.) Dhawan Singh" class="avatar" loading="lazy">
+
+  <header>
+    <div style="display:flex;gap:16px;align-items:center;flex:1 1 auto;min-width:0">
+      <!-- Profile Photo -->
+      <div style="flex-shrink:0">
+        <img src="dhawan.jpg" alt="Prof (Dr.) Dhawan Singh" class="avatar" loading="lazy">
+      </div>
+
+      <!-- Name and contact -->
+      <div style="min-width:0">
+        <h1>Prof (Dr.) Dhawan Singh</h1>
+        <p class="headline">Professor (ECE) · Metamaterial Antennas | Embedded &amp; IoT | Cloud &amp; Automation | Perovskite Solar Cells</p>
+        <div class="meta">
+          <span>Chandigarh University, Punjab, India</span>
+          <span>•</span>
+          <a href="mailto:dhawan.e14960@cumail.in">dhawan.e14960@cumail.in</a>
+          <span>•</span>
+          <a href="mailto:dhawan4324@gmail.com">dhawan4324@gmail.com</a>
+          <span>•</span>
+          <span>+91-7018743983</span>
+        </div>
+        <div class="meta" style="margin-top:6px">
+          <a href="https://scholor.google.co.in/citation?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <span>•</span>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener">Scopus</a>
+          <span>•</span>
+          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener">ResearchGate</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
     </div>
 
-    <!-- Name and contact -->
-    <div style="min-width:0">
-      <h1>Prof (Dr.) Dhawan Singh</h1>
-      <p class="headline">Professor (ECE) · Metamaterial Antennas | Embedded &amp; IoT | Cloud &amp; Automation | Perovskite Solar Cells</p>
-      <div class="meta">
-        <span>Chandigarh University, Punjab, India</span>
-        <span>•</span>
-        <a href="mailto:dhawan.e14960@cumail.in">dhawan.e14960@cumail.in</a>
-        <span>•</span>
-        <a href="mailto:dhawan4324@gmail.com">dhawan4324@gmail.com</a>
-        <span>•</span>
-        <span>+91-7018743983</span>
-      </div>
-      <div class="meta" style="margin-top:6px">
-        <a href="https://scholor.google.co.in/citation?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        <span>•</span>
-        <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener">Scopus</a>
-        <span>•</span>
-        <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener">ResearchGate</a>
-        <span>•</span>
-        <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener">LinkedIn</a>
+    <!-- QR Code (scannable + clickable) -->
+    <div style="text-align:center">
+      <!-- Use the stable RAW GitHub URL; fully URL-encoded inside the QR generator -->
+      <a href="https://raw.githubusercontent.com/dhawan4324/dr-dhawan-singh-resume/main/Dhawan Singh_Full Resume.docx"
+         target="_blank" rel="noopener" title="Open full résumé (.docx)">
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=132x132&margin=2&data=https%3A%2F%2Fraw.githubusercontent.com%2Fdhawan4324%2Fdr-dhawan-singh-resume%2Fmain%2FDhawan_Singh_Full_Resume.docx"
+          alt="QR to full résumé (Word file)"
+          width="132"
+          height="132"
+          style="border-radius:10px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(2,6,23,0.10);background:#fff"
+        />
+      </a>
+      <div style="font-size:12px;color:#64748b;margin-top:6px">
+        <a href="https://raw.githubusercontent.com/dhawan4324/dr-dhawan-singh-resume/main/Dhawan_Singh_Full_Resume.docx"
+           target="_blank" rel="noopener" style="text-decoration:underline">
+           Download full résumé (.docx)
+        </a>
       </div>
     </div>
-  </div>
-  <!-- QR Code -->
-<div style="text-align:center">
-  <img
-    src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://github.com/dhawan4324/dr-dhawan-singh-resume/raw/main/Dhawan_Singh_Full_Resume.docx"
-    alt="QR to full résumé (Word file)"
-    width="120"
-    height="120"
-    style="border-radius:6px;border:1px solid var(--line);cursor:pointer"
-    onclick="window.open('https://github.com/dhawan4324/dr-dhawan-singh-resume/raw/main/Dhawan Singh_Full Resume.docx','_blank')"
-  />
-  <div style="font-size:12px;color:#6b7280;margin-top:6px">
-    <a href="https://github.com/dhawan4324/dr-dhawan-singh-resume/raw/main/Dhawan_Singh_Full_Resume.docx"
-       target="_blank" rel="noopener" style="text-decoration:underline">
-       Download full résumé (.docx)
-    </a>
-  </div>
-</div>
+  </header>
 
-</header>
-  <div class="grid" style="margin-top:16px">
+  <div class="grid">
     <main>
       <section>
         <h3>Profile</h3>
@@ -152,7 +198,7 @@
       <section>
         <h3>Skills</h3>
         <div>
-          <span class="chip">CST · HFSS · ADS · Antenna Magus</span>
+          <span class="chip chip--accent">CST · HFSS · ADS · Antenna Magus</span>
           <span class="chip">Metamaterial Antennas (RCS/FSS/EBG/MIMO)</span>
           <span class="chip">Arduino · STM32 · Raspberry Pi</span>
           <span class="chip">C/C++ · Embedded C · VHDL · MATLAB</span>
@@ -160,15 +206,15 @@
           <span class="chip">OrCAD · Proteus · Altium · Multisim</span>
           <span class="chip">SiPass · Si-VMS · Desigo-CC</span>
           <span class="chip">LaTeX · MS Office</span>
-          <span class="chip">Perovskite Solar Cells</span>
+          <span class="chip" style="background:linear-gradient(135deg,#ecfdf5,#eef2ff);border-color:#d1fae5">Perovskite Solar Cells</span>
         </div>
       </section>
 
       <section>
         <h3>Education</h3>
-        <p><strong>Ph.D., Electronic Engineering</strong><br>University of KwaZulu-Natal, South Africa — 2019<br><span style="color:#6b7280">RCS reduction using shorted-stub metamaterial absorbers</span></p>
-        <p><strong>M.Tech (ECE)</strong><br>Eternal University — 2013 <span style="color:#6b7280">(75%)</span></p>
-        <p><strong>M.Sc. (Electronics)</strong><br>Jiwaji University — 2006 <span style="color:#6b7280">(65%)</span></p>
+        <p><strong>Ph.D., Electronic Engineering</strong><br>University of KwaZulu-Natal, South Africa — 2019<br><span style="color:#64748b">RCS reduction using shorted-stub metamaterial absorbers</span></p>
+        <p><strong>M.Tech (ECE)</strong><br>Eternal University — 2013 <span style="color:#64748b">(75%)</span></p>
+        <p><strong>M.Sc. (Electronics)</strong><br>Jiwaji University — 2006 <span style="color:#64748b">(65%)</span></p>
         <p><strong>UGC-NET (Electronic Science)</strong><br>Qualified — 2014</p>
       </section>
 
