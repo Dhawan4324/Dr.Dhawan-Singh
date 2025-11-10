@@ -32,6 +32,7 @@
   .role{font-weight:600}
   .org{color:#374151}
   .when{margin-left:auto;color:#6b7280;font-size:12px}
+  .avatar{width:110px;height:110px;border-radius:50%;border:2px solid var(--line);object-fit:cover;display:block}
   footer{margin:18px 0 0 0;color:var(--muted);font-size:12px;text-align:center}
   /* Print to one page */
   @media print{
@@ -44,29 +45,37 @@
 </head>
 <body>
 <div class="wrap">
-  <header style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px">
-    <div>
-      <h1>Prof (Dr.) Dhawan Singh</h1>
-      <p class="headline">Professor (ECE) · Metamaterial Antennas | Embedded &amp; IoT | Cloud &amp; Automation</p>
-      <div class="meta">
-        <span>Punjab, India</span>
-        <span>•</span>
-        <a href="mailto:dhawan_deor@yahoo.co.in">dhawan_deor@yahoo.co.in</a>
-        <span>•</span>
-        <a href="mailto:dhawan4324@gmail.com">dhawan4324@gmail.com</a>
-        <span>•</span>
-        <span>+91-7018743983 </span>
+  <header style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px">
+    <div style="display:flex;gap:16px;align-items:center;flex:1 1 auto;min-width:0">
+      <!-- Profile Photo -->
+      <div style="flex-shrink:0">
+        <img src="dhawan.jpg" alt="Prof (Dr.) Dhawan Singh" class="avatar" loading="lazy">
       </div>
-      <div class="meta" style="margin-top:6px">
-        <a href="https://scholor.google.co.za/citation?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        <span>•</span>
-        <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener">Scopus</a>
-        <span>•</span>
-        <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener">ResearchGate</a>
-        <span>•</span>
-        <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener">LinkedIn Profile</a>
+      <!-- Name and contact -->
+      <div style="min-width:0">
+        <h1>Prof (Dr.) Dhawan Singh</h1>
+        <p class="headline">Professor (ECE) · Metamaterial Antennas | Embedded &amp; IoT | Cloud &amp; Automation</p>
+        <div class="meta">
+          <span>Punjab, India</span>
+          <span>•</span>
+          <a href="mailto:dhawan_deor@yahoo.co.in">dhawan_deor@yahoo.co.in</a>
+          <span>•</span>
+          <a href="mailto:dhawan4324@gmail.com">dhawan4324@gmail.com</a>
+          <span>•</span>
+          <span>+91-7018743983</span>
+        </div>
+        <div class="meta" style="margin-top:6px">
+          <a href="https://scholor.google.co.za/citation?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <span>•</span>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener">Scopus</a>
+          <span>•</span>
+          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener">ResearchGate</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener">LinkedIn Profile</a>
+        </div>
       </div>
     </div>
+    <!-- QR to online résumé (kept on the right) -->
     <div style="text-align:center">
       <img
         src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A%2F%2Fdhawan4324.github.io%2Fdr-dhawan-singh-resume%2F"
@@ -107,16 +116,16 @@
         <ul>
           <li>Set up research workshops and labs (antenna design, IoT, VLSI).</li>
           <li>Editorial Board Member (AJSET, since 2022); reviewer for Elsevier/Springer.</li>
-          <li>Convened 15-day Electrical Engineering Research workshop (2011).</li>
+          <li>Convened 15-day Electrical Engineering Research workshop (2021).</li>
         </ul>
 
         <div class="row" style="margin-top:6px">
           <div class="role">Ph.D. Researcher / Demonstrator</div>
-          <div class="org">· University of KwaZulu‑Natal, South Africa</div>
+          <div class="org">· University of KwaZulu-Natal, South Africa</div>
           <div class="when">2016 — 2019</div>
         </div>
         <ul>
-          <li>Shorted‑stub metamaterial absorbers for RCS reduction of patch antennas.</li>
+          <li>Shorted-stub metamaterial absorbers for RCS reduction of patch antennas.</li>
           <li>Top 11 Published Student Researchers (2018).</li>
         </ul>
       </section>
@@ -124,10 +133,10 @@
       <section>
         <h3>Selected Research &amp; IP</h3>
         <ul>
-          <li>Indian Journal of Physics (2025): Lead‑free perovskite solar cell simulations (Thakur &amp; Singh).</li>
-          <li>CRC Book Chapter (2025): Scheduling in multi‑cloud architecture (Mishra, Singh, Thakur).</li>
-          <li>PIER B / IJMOT (2023): Multiband rectenna; compact dual‑band antennas.</li>
-          <li>Recent IP: Smart Access‑Controlled Helmet; IoT Gas Cylinder Stand; AI Intercom; Solar Lawn Mower (granted 2022).</li>
+          <li>Indian Journal of Physics (2025): Lead-free perovskite solar cell simulations (Thakur &amp; Singh).</li>
+          <li>CRC Book Chapter (2025): Scheduling in multi-cloud architecture (Mishra, Singh, Thakur).</li>
+          <li>PIER B / IJMOT (2023): Multiband rectenna; compact dual-band antennas.</li>
+          <li>Recent IP: Smart Access-Controlled Helmet; IoT Gas Cylinder Stand; AI Intercom; Solar Lawn Mower (granted 2022).</li>
         </ul>
       </section>
     </main>
@@ -142,33 +151,33 @@
           <span class="chip">C/C++ · Embedded C · VHDL · MATLAB</span>
           <span class="chip">AWS · OpenShift · Terraform/Jenkins</span>
           <span class="chip">OrCAD · Proteus · Altium · Multisim</span>
-          <span class="chip">SiPass · Si‑VMS · Desigo‑CC</span>
+          <span class="chip">SiPass · Si-VMS · Desigo-CC</span>
           <span class="chip">LaTeX · MS Office</span>
         </div>
       </section>
 
       <section>
         <h3>Education</h3>
-        <p><strong>Ph.D., Electronic Engineering</strong><br>University of KwaZulu‑Natal, South Africa — 2019<br><span style="color:#6b7280">RCS reduction using shorted‑stub metamaterial absorbers</span></p>
+        <p><strong>Ph.D., Electronic Engineering</strong><br>University of KwaZulu-Natal, South Africa — 2019<br><span style="color:#6b7280">RCS reduction using shorted-stub metamaterial absorbers</span></p>
         <p><strong>M.Tech (ECE)</strong><br>Eternal University — 2013 <span style="color:#6b7280">(75%)</span></p>
         <p><strong>M.Sc. (Electronics)</strong><br>Jiwaji University — 2006 <span style="color:#6b7280">(65%)</span></p>
-        <p><strong>UGC‑NET (Electronic Science)</strong><br>Qualified — 2014</p>
+        <p><strong>UGC-NET (Electronic Science)</strong><br>Qualified — 2014</p>
       </section>
 
       <section>
         <h3>Highlights</h3>
         <ul>
           <li>Publications: 40+; Patents/Designs: 25+</li>
-          <li>Citations: Scholar ~788 (h‑12, i10‑16); Scopus 498 (h‑9)</li>
+          <li>Citations: Scholar ~788 (h-12, i10-16); Scopus 498 (h-9)</li>
           <li>Mentor: SIH 2022 Hardware (finale)</li>
-          <li>Microsoft AI‑900 • IEEE · IAENG · RSRI</li>
+          <li>Microsoft AI-900 • IEEE · IAENG · RSRI</li>
         </ul>
       </section>
     </aside>
   </div>
 
   <footer>
-    Print: use your browser’s <b>Print / Save as PDF</b> for a one‑page export.
+    Print: use your browser’s <b>Print / Save as PDF</b> for a one-page export.
   </footer>
 </div>
 </body>
