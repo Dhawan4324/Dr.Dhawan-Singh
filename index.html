@@ -1,261 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prof (Dr.) Dhawan Singh — Résumé</title>
-<meta name="description" content="One-page résumé of Prof (Dr.) Dhawan Singh — Professor (ECE), Metamaterial Antennas, Embedded & IoT, Cloud & Automation, Solar Cells.">
-<meta property="og:title" content="Prof (Dr.) Dhawan Singh — Résumé">
-<meta property="og:description" content="Professor (ECE) · Metamaterial Antennas | Embedded & IoT | Cloud & Automation | Perovskite Solar Cells">
-<meta property="og:type" content="website">
-<meta name="robots" content="index,follow">
-<style>
-  :root{
-    /* Color system */
-    --bg: #f8fafc;
-    --panel: #ffffff;
-    --ink: #0f172a;        /* slate-900 */
-    --muted:#475569;       /* slate-600 */
-    --line:#e2e8f0;        /* slate-200 */
-    --chip:#f1f5f9;        /* slate-100 */
-    --accent:#2563eb;      /* blue-600 */
-    --accent-2:#7c3aed;    /* violet-600 */
-    --accent-3:#10b981;    /* emerald-500 */
-  }
-
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,"Apple Color Emoji","Segoe UI Emoji";}
-  a{color:var(--accent);text-underline-offset:2px}
-  .wrap{max-width:1040px;margin:0 auto;padding:24px}
-
-  /* Header */
-  header{
-    display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between;
-    background: linear-gradient(135deg, #eef2ff 0%, #ecfeff 35%, #f0f9ff 100%);
-    border:1px solid var(--line);border-radius:20px;padding:18px 20px;
-    box-shadow: 0 6px 24px rgba(2,6,23,0.06);
-  }
-  header h1{margin:0 0 6px 0;font-size:30px;line-height:1.15;font-weight:800}
-  header .headline{font-size:16px;color:var(--ink);margin:0 0 8px 0}
-  header .meta{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
-  header .meta span, header .meta a{white-space:nowrap}
-
-  .avatar{width:112px;height:112px;border-radius:50%;
-    border:3px solid #fff; outline:2px solid var(--line); object-fit:cover;display:block;
-    box-shadow:0 6px 18px rgba(2,6,23,0.15);
-  }
-
-  /* Grid & Panels */
-  .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:16px}
-  @media(min-width:980px){.grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr);}}
-  section{
-    background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;
-    box-shadow: 0 4px 16px rgba(2,6,23,0.05);
-  }
-  h3{margin:0 0 8px 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#64748b}
-  p{margin:6px 0}
-  ul{margin:6px 0 0 18px}
-
-  /* Chips */
-  .chip{
-    display:inline-flex;align-items:center;border:1px solid var(--line);
-    background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);
-    border-radius:999px;padding:6px 12px;margin:6px 8px 0 0;font-size:12px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
-  }
-  .chip--accent{background:linear-gradient(135deg,#eff6ff 0%,#eef2ff 100%);border-color:#dbeafe}
-
-  /* Timeline rows */
-  .row{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
-  .role{font-weight:700}
-  .org{color:#334155}
-  .when{margin-left:auto;color:#64748b;font-size:12px}
-
-  /* Footer */
-  footer{margin:18px 0 0 0;color:var(--muted);font-size:12px;text-align:center}
-
-  /* Print one page */
-  @media print{
-    @page{size:A4;margin:12mm}
-    body{background:#fff}
-    .wrap{padding:0}
-    header{background:#fff}
-    a{text-decoration:none;color:inherit}
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
-
-  <header>
-    <div style="display:flex;gap:16px;align-items:center;flex:1 1 auto;min-width:0">
-      <!-- Profile Photo -->
-      <div style="flex-shrink:0">
-        <img src="dhawan.jpg" alt="Prof (Dr.) Dhawan Singh" class="avatar" loading="lazy">
+    <!-- QR Code (Working & Clickable for Resume) -->
+    <div style="text-align:center">
+      <div id="qr"
+           style="display:inline-block; padding:8px; background:#fff; border:1px solid #e2e8f0; border-radius:10px; box-shadow:0 4px 16px rgba(2,6,23,.10)">
       </div>
 
-      <!-- Name and contact -->
-      <div style="min-width:0">
-        <h1>Prof (Dr.) Dhawan Singh</h1>
-        <p class="headline">Professor (ECE) · Metamaterial Antennas | Embedded &amp; IoT | Cloud &amp; Automation | Perovskite Solar Cells</p>
-        <div class="meta">
-          <span>Chandigarh University, Punjab, India</span>
-          <span>•</span>
-          <a href="mailto:dhawan_deor@yahoo.co.in">dhawan_deor@yahoo.co.in</a>
-          <span>•</span>
-           <a href="mailto:dhawan4324@gmail.com">dhawan4324@gmail.com</a>
-          <span>•</span>
-          <a href="mailto:dhawan.e14960@cumail.in">dhawan.e14960@cumail.in</a>
-          <span>•</span>
-          <span>+91-7018743983</span>
-        </div>
-        <div class="meta" style="margin-top:6px">
-          <a href="https://scholar.google.co.in/citations?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          <span>•</span>
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener">Scopus</a>
-          <span>•</span>
-          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener">ResearchGate</a>
-          <span>•</span>
-          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
+      <!-- Text download link -->
+      <div style="margin-top:8px">
+        <a id="resumeDownload"
+           href="https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/Dhawan_Singh_Full_Resume.pdf"
+           target="_blank" rel="noopener"
+           style="text-decoration:underline; font-size:12px; color:#64748b">
+           Download full résumé (PDF)
+        </a>
+      </div>
+
+      <!-- Big button -->
+      <div style="margin-top:8px">
+        <a id="resumeButton"
+           href="https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/Dhawan_Singh_Full_Resume.pdf"
+           target="_blank" rel="noopener"
+           style="display:inline-block;background:#2563eb;color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-size:14px">
+           Open Résumé
+        </a>
       </div>
     </div>
 
-    <!-- QR Code (Working & Clickable for Resume) -->
-<div style="text-align:center">
-  <div id="qr"
-       style="display:inline-block; padding:8px; background:#fff; border:1px solid #e2e8f0; border-radius:10px; box-shadow:0 4px 16px rgba(2,6,23,.10)">
-  </div>
+    <!-- QRCode generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const resumeUrl = "https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/Dhawan_Singh_Full_Resume.pdf";
 
-  <div style="margin-top:8px">
-    <a id="resumeLinkA"
-   href="https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/Dhawan_Singh_Full_Resume.pdf"
-       target="_blank" rel="noopener"
-       style="text-decoration:underline; font-size:12px; color:#64748b">
-       Download full résumé (.docx)
-    </a>
-  </div>
-<!-- QRCode generator link -->
-  <div style="margin-top:8px">
-    <a id="resumeLinkA"
-   href="https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/Dhawan_Singh_Full_Resume.pdf"
-   target="_blank" rel="noopener"
-   style="text-decoration:underline; font-size:12px; color:#64748b">
-   Download full résumé (PDF)
-</a>
-  </div>
-</div>
+        new QRCode(document.getElementById("qr"), {
+          text: resumeUrl,
+          width: 132,
+          height: 132,
+          correctLevel: QRCode.CorrectLevel.H
+        });
 
-<!-- QRCode generator -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const url = "https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/Dhawan_Singh_Full_Resume.pdf";
-    new QRCode(document.getElementById("qr"), {
-      text: url,
-      width: 132,
-      height: 132,
-      correctLevel: QRCode.CorrectLevel.H
-    });
-    document.getElementById("resumeLinkA").href = url;
-  });
-</script>
-
-  </header>
-
-  <div class="grid">
-    <main>
-      <section>
-        <h3>Profile</h3>
-        <p>Research-driven professor with 18+ years across academia and industry (ECE/EE/CSE). Ph.D. (Electronic Engineering, UKZN) with work on metamaterial absorbers and RCS reduction. 48+ publications, 25+ patents/designs/utility, and supervision of Ph.D/M.Tech theses. Builds IoT/embedded prototypes, research in the field of Perovskite solar cells and cloud automation; strong record in curriculum design, workshops, and student mentoring.</p>
-      </section>
-
-      <section>
-        <h3>Experience</h3>
-        <div class="row">
-          <div class="role">Professor (ECE)</div>
-          <div class="org">· Chandigarh University</div>
-          <div class="when">2023 — Present</div>
-        </div>
-        <ul>
-          <li>Lead teaching &amp; research in antennas, embedded/IoT, and cloud security.</li>
-          <li>Supervise Ph.D. &amp; M.Tech scholars; drive publications and patents.</li>
-          <li>Organize workshops; mentor teams to national conferences and journals.</li>
-        </ul>
-
-        <div class="row" style="margin-top:6px">
-          <div class="role">Associate Professor</div>
-          <div class="org">· Chitkara University</div>
-          <div class="when">2019 — 2023</div>
-        </div>
-        <ul>
-          <li>Set up research workshops and labs (antenna design, IoT, VLSI).</li>
-          <li>Editorial Board Member (AJSET, since 2022); reviewer for Elsevier/Springer.</li>
-          <li>Convened 15-day Electrical Engineering Research workshop (2021).</li>
-        </ul>
-
-        <div class="row" style="margin-top:6px">
-          <div class="role">Ph.D. Researcher / Demonstrator</div>
-          <div class="org">· University of KwaZulu-Natal, South Africa</div>
-          <div class="when">2016 — 2019</div>
-        </div>
-        <ul>
-          <li>Shorted-stub metamaterial absorbers for RCS reduction of patch antennas.</li>
-          <li>Top 11 Published Student Researchers (2018).</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Selected Research &amp; IP</h3>
-        <ul>
-          <li>Indian Journal of Physics (2025): Lead-free perovskite solar cell simulations (Thakur &amp; Singh).</li>
-          <li>CRC Book Chapter (2025): Scheduling in multi-cloud architecture (Mishra, Singh, Thakur).</li>
-          <li>PIER B / IJMOT (2023): Multiband rectenna; compact dual-band antennas.</li>
-          <li>Recent IP: Smart Access-Controlled Helmet; IoT Gas Cylinder Stand; AI Intercom; Solar Lawn Mower (granted 2022).</li>
-        </ul>
-      </section>
-    </main>
-
-    <aside>
-      <section>
-        <h3>Skills</h3>
-        <div>
-          <span class="chip chip--accent">CST · HFSS · ADS · Antenna Magus</span>
-          <span class="chip">Metamaterial Antennas (RCS/FSS/EBG/MIMO)</span>
-          <span class="chip">Arduino · STM32 · Raspberry Pi</span>
-          <span class="chip">C/C++ · Embedded C · VHDL · MATLAB</span>
-          <span class="chip">AWS · OpenShift · Terraform/Jenkins</span>
-          <span class="chip">OrCAD · Proteus · Altium · Multisim</span>
-          <span class="chip">SiPass · Si-VMS · Desigo-CC</span>
-          <span class="chip">LaTeX · MS Office</span>
-          <span class="chip" style="background:linear-gradient(135deg,#ecfdf5,#eef2ff);border-color:#d1fae5">Perovskite Solar Cells</span>
-        </div>
-      </section>
-
-      <section>
-        <h3>Education</h3>
-        <p><strong>Ph.D., Electronic Engineering</strong><br>University of KwaZulu-Natal, South Africa — 2019<br><span style="color:#64748b">RCS reduction using shorted-stub metamaterial absorbers</span></p>
-        <p><strong>M.Tech (ECE)</strong><br>Eternal University — 2013 <span style="color:#64748b">(75%)</span></p>
-        <p><strong>M.Sc. (Electronics)</strong><br>Jiwaji University — 2006 <span style="color:#64748b">(65%)</span></p>
-        <p><strong>UGC-NET (Electronic Science)</strong><br>Qualified — 2014</p>
-      </section>
-
-      <section>
-        <h3>Highlights</h3>
-        <ul>
-          <li>Publications: 48+; Patents/Designs/Utility: 25+</li>
-          <li>Citations: Scholar ~1017 (h-14, i10-22); Scopus 540 (h-10)</li>
-          <li>Mentor: SIH 2022 Hardware (finale)</li>
-          <li>Microsoft AI-900</li>
-           <li>• IEEE • IAENG • RSRI</li>
-        </ul>
-      </section>
-    </aside>
-  </div>
-
-  <footer>
-    Print: use your browser’s <b>Print / Save as PDF</b> for a one-page export.
-  </footer>
-</div>
-</body>
-</html>
+        // Ensure both links always stay in sync
+        document.getElementById("resumeDownload").href = resumeUrl;
+        document.getElementById("resumeButton").href = resumeUrl;
+      });
+    </script>
