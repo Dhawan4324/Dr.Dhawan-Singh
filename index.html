@@ -10,69 +10,355 @@
 <meta property="og:type" content="website">
 <meta name="robots" content="index,follow">
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
   :root{
-    --bg: #f8fafc;
-    --panel: #ffffff;
-    --ink: #0f172a;
-    --muted:#475569;
-    --line:#e2e8f0;
-    --chip:#f1f5f9;
+    /* Light theme */
+    --bg: #0f172a;
+    --bg-soft: #020617;
+    --panel: #020617;
+    --panel-soft:#0b1220;
+    --ink: #e5e7eb;
+    --muted:#9ca3af;
+    --line:#1f2937;
+    --chip:#020617;
+    --accent:#38bdf8;
+    --accent-soft:rgba(56,189,248,0.18);
+    --accent-2:#a855f7;
+    --accent-3:#22c55e;
+    --shadow-soft:0 18px 45px rgba(15,23,42,0.65);
+    --radius-lg:22px;
+  }
+
+  body[data-theme="light"]{
+    --bg:#f4f4fb;
+    --bg-soft:#e5e9f5;
+    --panel:#ffffff;
+    --panel-soft:#eef2ff;
+    --ink:#020617;
+    --muted:#64748b;
+    --line:#d4d4dd;
+    --chip:#f9fafb;
     --accent:#2563eb;
-    --accent-2:#7c3aed;
-    --accent-3:#10b981;
+    --accent-soft:rgba(37,99,235,0.13);
+    --shadow-soft:0 16px 40px rgba(15,23,42,0.12);
   }
 
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;}
-  a{color:var(--accent);text-underline-offset:2px}
-  .wrap{max-width:1040px;margin:0 auto;padding:24px}
-
-  header{
-    display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between;
-    background: linear-gradient(135deg, #eef2ff 0%, #ecfeff 35%, #f0f9ff 100%);
-    border:1px solid var(--line);border-radius:20px;padding:18px 20px;
-    box-shadow: 0 6px 24px rgba(2,6,23,0.06);
+  html,body{
+    margin:0;
+    padding:0;
+    background:radial-gradient(circle at top, #1f2937 0, var(--bg) 45%, var(--bg-soft) 100%);
+    color:var(--ink);
+    font:15px/1.6 "Inter", system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
+    -webkit-font-smoothing:antialiased;
   }
-  header h1{margin:0 0 6px 0;font-size:30px;line-height:1.15;font-weight:800}
-  header .headline{font-size:16px;color:var(--ink);margin:0 0 8px 0}
-  header .meta{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
+
+  a{color:var(--accent);text-decoration:none;text-underline-offset:3px}
+  a:hover{text-decoration:underline}
+
+  /* Layout */
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:26px 18px 32px;
+  }
+
+  /* Top bar */
+  .top-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:12px;
+  }
+  .brand-mini{
+    font-weight:700;
+    letter-spacing:.17em;
+    font-size:11px;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .theme-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:5px 10px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:linear-gradient(135deg,rgba(15,23,42,0.9),rgba(15,23,42,0.7));
+    color:var(--muted);
+    font-size:11px;
+    cursor:pointer;
+    box-shadow:0 0 0 1px rgba(15,23,42,0.6);
+  }
+  .theme-toggle span.icon{
+    width:18px;height:18px;border-radius:999px;
+    display:inline-flex;align-items:center;justify-content:center;
+    background:rgba(15,23,42,1);font-size:12px;
+  }
+
+  /* Header card */
+  header{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    align-items:stretch;
+    justify-content:space-between;
+    background:radial-gradient(circle at top left,rgba(148,163,253,0.35),transparent 55%),
+               radial-gradient(circle at top right,rgba(56,189,248,0.3),transparent 55%),
+               linear-gradient(135deg, var(--panel-soft), var(--panel));
+    border:1px solid rgba(148,163,253,0.25);
+    border-radius:var(--radius-lg);
+    padding:20px 21px;
+    box-shadow:var(--shadow-soft);
+    position:relative;
+    overflow:hidden;
+    animation:card-in 600ms ease-out;
+  }
+
+  header::before{
+    content:"";
+    position:absolute;
+    inset:-40px;
+    background:
+      radial-gradient(circle at 0 120%,rgba(59,130,246,0.27),transparent 55%),
+      radial-gradient(circle at 100% 0,rgba(16,185,129,0.2),transparent 55%);
+    opacity:0.35;
+    pointer-events:none;
+  }
+
+  header > *{position:relative;z-index:1}
+
+  header h1{
+    margin:0 0 6px 0;
+    font-size:31px;
+    line-height:1.15;
+    font-weight:800;
+    letter-spacing:-0.03em;
+  }
+
+  header .headline{
+    font-size:15px;
+    color:var(--muted);
+    margin:0 0 10px 0;
+  }
+
+  header .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    color:var(--muted);
+    font-size:13px;
+  }
   header .meta span, header .meta a{white-space:nowrap}
 
-  .avatar{width:112px;height:112px;border-radius:50%;border:3px solid #fff; outline:2px solid var(--line); object-fit:cover;display:block;
-    box-shadow:0 6px 18px rgba(2,6,23,0.15);}
-
-  .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:16px}
-  @media(min-width:980px){.grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr);}}
-  section{
-    background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;
-    box-shadow: 0 4px 16px rgba(2,6,23,0.05);
+  .avatar{
+    width:118px;
+    height:118px;
+    border-radius:50%;
+    border:3px solid rgba(15,23,42,0.85);
+    outline:3px solid rgba(248,250,252,0.95);
+    object-fit:cover;
+    display:block;
+    box-shadow:0 16px 40px rgba(0,0,0,0.75);
+    background:#020617;
   }
-  h3{margin:0 0 8px 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#64748b}
-  p{margin:6px 0}
-  ul{margin:6px 0 0 18px}
+
+  /* QR / actions */
+  .qr-block{
+    text-align:center;
+    min-width:170px;
+  }
+  .qr-frame{
+    display:inline-block;
+    padding:8px;
+    background:#020617;
+    border-radius:16px;
+    border:1px solid rgba(148,163,253,0.4);
+    box-shadow:0 14px 40px rgba(15,23,42,0.9);
+  }
+
+  .qr-caption{
+    margin-top:8px;
+    font-size:11px;
+    color:var(--muted);
+  }
+
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-top:10px;
+    background:linear-gradient(135deg,var(--accent),#22c55e);
+    color:#0b1120;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 12px 35px rgba(56,189,248,0.55);
+    transform:translateY(0);
+    transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  }
+  .btn-primary span.arrow{font-size:15px}
+  .btn-primary:hover{
+    text-decoration:none;
+    transform:translateY(-1px);
+    filter:brightness(1.04);
+    box-shadow:0 16px 40px rgba(59,130,246,0.7);
+  }
+
+  .btn-link-ghost{
+    display:inline-block;
+    margin-top:4px;
+    font-size:11px;
+    color:var(--muted);
+    text-decoration:underline;
+  }
+
+  /* Grid + sections */
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-top:20px;
+  }
+  @media(min-width:980px){
+    .grid{
+      grid-template-columns:minmax(0,2fr) minmax(0,1.2fr);
+    }
+  }
+
+  section{
+    background:radial-gradient(circle at top left,rgba(148,163,253,0.15),transparent 60%),
+               linear-gradient(145deg,rgba(15,23,42,0.96),rgba(15,23,42,0.98));
+    border-radius:18px;
+    border:1px solid rgba(31,41,55,0.8);
+    padding:15px 16px 14px;
+    box-shadow:0 14px 35px rgba(15,23,42,0.8);
+    animation:card-in 700ms ease-out;
+  }
+  body[data-theme="light"] section{
+    background:linear-gradient(135deg,#f8fafc,#ffffff);
+    border-color:rgba(148,163,253,0.55);
+    box-shadow:0 12px 30px rgba(148,163,253,0.35);
+  }
+
+  h3{
+    margin:0 0 8px 0;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  p{margin:5px 0}
+  ul{margin:6px 0 0 18px;padding:0}
+  li{margin:2px 0 0 0}
+
+  .row{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-top:4px}
+  .role{font-weight:600}
+  .org{color:var(--muted);font-size:13px}
+  .when{margin-left:auto;color:var(--muted);font-size:11px}
 
   .chip{
-    display:inline-flex;align-items:center;border:1px solid var(--line);
-    background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);
-    border-radius:999px;padding:6px 12px;margin:6px 8px 0 0;font-size:12px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
+    display:inline-flex;
+    align-items:center;
+    border:1px solid rgba(148,163,253,0.55);
+    background:radial-gradient(circle at 0 0,var(--accent-soft),rgba(15,23,42,0.95));
+    border-radius:999px;
+    padding:5px 11px;
+    margin:4px 7px 0 0;
+    font-size:11px;
+    color:var(--muted);
+    backdrop-filter:blur(10px);
   }
-  .chip--accent{background:linear-gradient(135deg,#eff6ff 0%,#eef2ff 100%);border-color:#dbeafe}
+  body[data-theme="light"] .chip{
+    background:linear-gradient(135deg,#ffffff,#eef2ff);
+    color:#4b5563;
+  }
+  .chip--accent{
+    border-color:rgba(56,189,248,0.7);
+    color:#e0f2fe;
+  }
+  body[data-theme="light"] .chip--accent{color:#1d4ed8;}
 
-  .row{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
-  .role{font-weight:700}
-  .org{color:#334155}
-  .when{margin-left:auto;color:#64748b;font-size:12px}
+  footer{
+    margin:20px 0 4px;
+    color:var(--muted);
+    font-size:11px;
+    text-align:center;
+  }
 
-  footer{margin:18px 0 0 0;color:var(--muted);font-size:12px;text-align:center}
+  /* Simple animation */
+  @keyframes card-in{
+    from{opacity:0;transform:translateY(8px) scale(.995);}
+    to{opacity:1;transform:translateY(0) scale(1);}
+  }
+
+  /* Links row */
+  .links-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:6px;
+    font-size:13px;
+  }
+  .links-row a{
+    padding:2px 0;
+  }
+  .dot-sep{
+    opacity:.6;
+  }
+
+  /* Badges line in highlights */
+  .badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:4px;
+    font-size:11px;
+  }
+  .badge{
+    border-radius:999px;
+    padding:3px 9px;
+    background:rgba(15,23,42,0.9);
+    border:1px solid rgba(148,163,253,0.6);
+    color:var(--muted);
+  }
+  body[data-theme="light"] .badge{
+    background:#f9fafb;
+    color:#4b5563;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width:640px){
+    header{
+      padding:16px 14px;
+    }
+    header h1{font-size:25px}
+    .avatar{width:98px;height:98px}
+  }
 </style>
 </head>
 
-<body>
+<body data-theme="dark">
 <div class="wrap">
 
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="brand-mini">DHawan · Academic Résumé</div>
+    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark / light theme">
+      <span class="icon" id="themeIcon">🌙</span>
+      <span id="themeLabel">Dark mode</span>
+    </button>
+  </div>
+
   <header>
+    <!-- Left: avatar + basic info -->
     <div style="display:flex;gap:16px;align-items:center;flex:1 1 auto;min-width:0">
       <div style="flex-shrink:0">
         <img src="dhawan.jpg" alt="Prof (Dr.) Dhawan Singh" class="avatar" loading="lazy">
@@ -94,108 +380,217 @@
           <span>+91-7018743983</span>
         </div>
 
-        <div class="meta" style="margin-top:6px">
-          <a href="https://scholar.google.co.in/citations?user=y80jQngAAAAJ&hl=en" target="_blank">Google Scholar</a>
-          <span>•</span>
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank">Scopus</a>
-          <span>•</span>
-          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank">ResearchGate</a>
-          <span>•</span>
-          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank">LinkedIn</a>
+        <div class="links-row">
+          <a href="https://scholar.google.co.in/citations?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <span class="dot-sep">•</span>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener">Scopus</a>
+          <span class="dot-sep">•</span>
+          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener">ResearchGate</a>
+          <span class="dot-sep">•</span>
+          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </div>
 
-    <!-- QR code + links -->
-    <div style="text-align:center">
-      <div id="qr"
-        style="display:inline-block;padding:8px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;box-shadow:0 4px 16px rgba(2,6,23,.10)">
+    <!-- Right: QR and buttons -->
+    <div class="qr-block">
+      <div class="qr-frame">
+        <div id="qr"></div>
       </div>
 
-      <div style="margin-top:8px">
+      <div class="qr-caption">
+        Scan to open full résumé (PDF)
+      </div>
+
+      <a id="resumeButton"
+         href="Dhawan_Singh_Full_Resume.pdf"
+         target="_blank" rel="noopener"
+         class="btn-primary">
+        <span>Open Résumé</span>
+        <span class="arrow">↗</span>
+      </a>
+
+      <div>
         <a id="resumeDownload"
            href="Dhawan_Singh_Full_Resume.pdf"
-           target="_blank"
-           style="text-decoration:underline;font-size:12px;color:#64748b">
-           Download full résumé (PDF)
-        </a>
-      </div>
-
-      <div style="margin-top:8px">
-        <a id="resumeButton"
-           href="Dhawan_Singh_Full_Resume.pdf"
-           target="_blank"
-           style="display:inline-block;background:#2563eb;color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-size:14px">
-           Open Résumé
+           target="_blank" rel="noopener"
+           class="btn-link-ghost">
+           Download as PDF
         </a>
       </div>
     </div>
   </header>
 
   <div class="grid">
+    <!-- MAIN COLUMN -->
     <main>
-
       <section>
         <h3>Profile</h3>
-        <p>Research-driven professor with 18+ years across academia and industry...</p>
+        <p>Research-driven professor with 18+ years across academia and industry (ECE/EE/CSE). Ph.D. in Electronic Engineering (University of KwaZulu-Natal, South Africa) with specialization in metamaterial absorbers and RCS reduction. Authored 48+ research publications and 25+ patents/designs/utility models while supervising multiple Ph.D. and M.Tech theses.</p>
+        <p>Hands-on experience in IoT and embedded system prototyping, perovskite solar cell simulations, and cloud automation. Actively involved in curriculum design, faculty development programs, and mentoring of student hackathon teams (including SIH 2022 Hardware finale).</p>
       </section>
 
       <section>
         <h3>Experience</h3>
-        <!-- your same Experience code -->
+
+        <div class="row">
+          <div class="role">Professor, Electronics &amp; Communication Engineering</div>
+          <div class="org">· Chandigarh University</div>
+          <div class="when">2023 — Present</div>
+        </div>
+        <ul>
+          <li>Lead teaching and research in antennas, embedded/IoT systems, cloud security, and sustainable electronics.</li>
+          <li>Supervise Ph.D. and M.Tech scholars; drive group publications, patents, and externally funded proposals.</li>
+          <li>Organise workshops, FDPs, and student innovation challenges across ECE and CSE departments.</li>
+        </ul>
+
+        <div class="row" style="margin-top:8px">
+          <div class="role">Associate Professor</div>
+          <div class="org">· Chitkara University</div>
+          <div class="when">2019 — 2023</div>
+        </div>
+        <ul>
+          <li>Established research clusters in antenna design, IoT, and VLSI; co-developed advanced lab infrastructure.</li>
+          <li>Served on editorial board of AJSET and reviewed manuscripts for Elsevier and Springer journals.</li>
+          <li>Convened a 15-day Electrical Engineering research workshop (2021) covering optimization, MATLAB, and simulation tools.</li>
+        </ul>
+
+        <div class="row" style="margin-top:8px">
+          <div class="role">Ph.D. Researcher &amp; Demonstrator</div>
+          <div class="org">· University of KwaZulu-Natal, South Africa</div>
+          <div class="when">2016 — 2019</div>
+        </div>
+        <ul>
+          <li>Designed shorted-stub metamaterial absorbers for RCS reduction of patch antennas and verified through measurements.</li>
+          <li>Taught and demonstrated undergraduate labs in RF/microwave engineering and electronics.</li>
+          <li>Recognised among the “Top 11 Published Student Researchers” (2018) at UKZN.</li>
+        </ul>
       </section>
 
       <section>
-        <h3>Selected Research & IP</h3>
-        <!-- your same IP list -->
+        <h3>Selected Research &amp; IP</h3>
+        <ul>
+          <li><strong>Lead-free Perovskite Solar Cells</strong> — Indian Journal of Physics (2025). Co-designed and simulated CsSnCl<sub>3</sub>-based PSCs for enhanced PCE and environmental sustainability.</li>
+          <li><strong>Multi-Cloud Task Scheduling</strong> — CRC book chapter (2025) on energy-aware scheduling in heterogeneous cloud architecture using metaheuristics.</li>
+          <li><strong>Rectenna &amp; Compact Dual-Band Antennas</strong> — PIER B and IJMOT publications (2023) on multiband rectenna design for energy harvesting and compact patch geometries.</li>
+          <li><strong>Smart Access-Controlled Helmet</strong> — Patent for helmet-integrated IoT system with accident detection, geofencing, and alcohol sensing.</li>
+          <li><strong>IoT Gas Cylinder Stand &amp; Solar Lawn Mower</strong> — Granted designs/utility models (2022) for domestic safety and smart agriculture.</li>
+        </ul>
       </section>
-
     </main>
 
+    <!-- SIDE COLUMN -->
     <aside>
       <section>
         <h3>Skills</h3>
-        <span class="chip chip--accent">CST · HFSS · ADS · Antenna Magus</span>
-        <span class="chip">Metamaterial Antennas</span>
-        <span class="chip">Arduino · STM32 · Raspberry Pi</span>
-        <span class="chip">AWS · Terraform · Jenkins</span>
+        <div>
+          <span class="chip chip--accent">CST Studio · HFSS · ADS · Antenna Magus</span>
+          <span class="chip">Metamaterial Antennas (RCS · FSS · EBG · MIMO)</span>
+          <span class="chip">Arduino · STM32 · Raspberry Pi · ESP32</span>
+          <span class="chip">C/C++ · Embedded C · VHDL · MATLAB</span>
+          <span class="chip">AWS · OpenShift · Terraform · Jenkins</span>
+          <span class="chip">OrCAD · Proteus · Altium · Multisim</span>
+          <span class="chip">SiPass · Si-VMS · Desigo-CC</span>
+          <span class="chip">LaTeX · Technical Writing</span>
+          <span class="chip">Perovskite Solar Cell Modelling</span>
+        </div>
       </section>
 
       <section>
         <h3>Education</h3>
-        <!-- your same Education -->
+        <p><strong>Ph.D., Electronic Engineering</strong><br>
+        University of KwaZulu-Natal, South Africa — 2019<br>
+        <span style="color:var(--muted)">Thesis: RCS reduction of antennas using shorted-stub metamaterial absorbers.</span></p>
+
+        <p><strong>M.Tech (ECE)</strong><br>
+        Eternal University — 2013<br>
+        <span style="color:var(--muted)">Aggregate: 75%</span></p>
+
+        <p><strong>M.Sc. (Electronics)</strong><br>
+        Jiwaji University — 2006<br>
+        <span style="color:var(--muted)">Aggregate: 65%</span></p>
+
+        <p><strong>UGC-NET (Electronic Science)</strong><br>
+        Qualified — 2014</p>
       </section>
 
       <section>
         <h3>Highlights</h3>
-        <!-- your same Highlights -->
+        <ul>
+          <li>Publications: 48+ research papers across journals, conferences, and book chapters.</li>
+          <li>IP Portfolio: 25+ patents, design registrations, and utility models filed/granted.</li>
+          <li>Citations (approx.): Google Scholar &gt; 1000 (h-index 14, i10-index 22); Scopus &gt; 540 (h-index 10).</li>
+          <li>Mentor: Smart India Hackathon 2022 (Hardware, grand finale team).</li>
+          <li>Certified: Microsoft Azure AI Fundamentals (AI-900).</li>
+          <li>Professional bodies: IEEE, IAENG, RSRI (lifetime membership).</li>
+        </ul>
+        <div class="badges">
+          <span class="badge">IoT &amp; Embedded Hardware</span>
+          <span class="badge">Perovskite PV Research</span>
+          <span class="badge">Cloud &amp; DevOps</span>
+          <span class="badge">Academic Leadership</span>
+        </div>
       </section>
     </aside>
   </div>
 
   <footer>
-    Print: use your browser’s <b>Print / Save as PDF</b> for a one-page export.
+    To save as a one-page PDF, use your browser’s <b>Print → Save as PDF</b>.
   </footer>
-
 </div>
 
-<!-- QR Code Generator -->
+<!-- QRCode generator -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const resumeUrl = "Dhawan_Singh_Full_Resume.pdf";  // FIXED LINK
+  (function() {
+    const resumeUrl = "Dhawan_Singh_Full_Resume.pdf";
 
-    new QRCode(document.getElementById("qr"), {
-      text: resumeUrl,
-      width: 132,
-      height: 132,
-      correctLevel: QRCode.CorrectLevel.H
+    // QR
+    document.addEventListener('DOMContentLoaded', function () {
+      new QRCode(document.getElementById("qr"), {
+        text: resumeUrl,
+        width: 132,
+        height: 132,
+        correctLevel: QRCode.CorrectLevel.H
+      });
+
+      document.getElementById("resumeDownload").href = resumeUrl;
+      document.getElementById("resumeButton").href = resumeUrl;
+
+      // Theme toggle
+      const toggle = document.getElementById('themeToggle');
+      const body = document.body;
+      const icon = document.getElementById('themeIcon');
+      const label = document.getElementById('themeLabel');
+
+      function setTheme(theme){
+        body.setAttribute('data-theme', theme);
+        if(theme === 'light'){
+          icon.textContent = '☀️';
+          label.textContent = 'Light mode';
+        }else{
+          icon.textContent = '🌙';
+          label.textContent = 'Dark mode';
+        }
+        try{
+          localStorage.setItem('drds-theme', theme);
+        }catch(e){}
+      }
+
+      // Load saved preference
+      try{
+        const saved = localStorage.getItem('drds-theme');
+        if(saved === 'light' || saved === 'dark'){
+          setTheme(saved);
+        }
+      }catch(e){}
+
+      toggle.addEventListener('click', function(){
+        const current = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        setTheme(current);
+      });
     });
-
-    document.getElementById("resumeDownload").href = resumeUrl;
-    document.getElementById("resumeButton").href = resumeUrl;
-  });
+  })();
 </script>
-
 </body>
 </html>
