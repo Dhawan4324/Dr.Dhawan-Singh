@@ -164,6 +164,17 @@
     filter:brightness(1.03);
   }
 
+  /* Publications area */
+  #pub-meta{
+    opacity:.85;
+    font-size:.95rem;
+    margin:4px 0 8px 0;
+    color: var(--muted);
+  }
+  #pub-list{
+    margin:6px 0 0 18px;
+  }
+
   /* animation */
   @keyframes fadeInUp{
     from{opacity:0;transform:translateY(10px);}
@@ -207,13 +218,13 @@
         </div>
 
         <div class="meta" style="margin-top:6px">
-          <a href="https://scholar.google.co.in/citations?user=y80jQngAAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a href="https://scholar.google.co.in/citations?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
           <span>•</span>
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank">Scopus</a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener noreferrer">Scopus</a>
           <span>•</span>
-          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank">ResearchGate</a>
+          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener noreferrer">ResearchGate</a>
           <span>•</span>
-          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -300,6 +311,13 @@
         </ul>
       </section>
 
+      <!-- ✅ NEW: Auto Publications section (ORCID) -->
+      <section>
+        <h3>Publications (Auto-updated from ORCID)</h3>
+        <div id="pub-meta">Loading publications…</div>
+        <ol id="pub-list"></ol>
+      </section>
+
     </main>
 
     <aside>
@@ -351,6 +369,10 @@
 
 <!-- QR Code Generator -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- ✅ NEW: Publications renderer (reads assets/publications.json and fills the section above) -->
+<script src="assets/publications.js"></script>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const resumeUrl = "Dhawan_Singh_Full_Resume.pdf";
