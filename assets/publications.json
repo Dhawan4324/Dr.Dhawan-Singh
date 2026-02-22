@@ -1,8 +1,16 @@
 {
   "orcid": "0000-0003-4868-5806",
-  "generated_utc": "2026-02-21T04:16:15.103144+00:00",
-  "count": 51,
+  "generated_utc": "2026-02-22T04:28:07.513174+00:00",
+  "count": 52,
   "publications": [
+    {
+      "title": "SMART INCLUSIVE VIDEO INTERCOM SYSTEM WITH AI-BASED FACIAL, VOICE AND SIGN RECOGNITION",
+      "year": 2026,
+      "type": "patent",
+      "doi": "",
+      "url": "",
+      "orcid_put_code": 206329644
+    },
     {
       "title": "Revolutionizing Software Deployment Through Microservices Containers",
       "year": 2025,
