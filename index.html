@@ -505,15 +505,22 @@
           if (summaries.length > 0) {
             const first = summaries[0];
 
-            if (
-              first["review-group-id"] &&
-              first["review-group-id"]["external-identifier"] &&
-              first["review-group-id"]["external-identifier"]["value"]
-            ) {
-              journalName = first["review-group-id"]["external-identifier"]["value"];
-            } else if (
-              first["convening-organization"] &&
-              first["convening-organization"]["name"]
+           if (
+  first["convening-organization"] &&
+  first["convening-organization"]["name"]
+) {
+  journalName = first["convening-organization"]["name"];
+} 
+else if (
+  first["review-group-id"] &&
+  first["review-group-id"]["external-identifier"] &&
+  first["review-group-id"]["external-identifier"]["value"]
+) {
+  journalName = first["review-group-id"]["external-identifier"]["value"];
+} 
+else {
+  journalName = "Peer Review Activity";
+}
             ) {
               journalName = first["convening-organization"]["name"];
             }
