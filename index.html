@@ -9,613 +9,876 @@
 <meta property="og:description" content="Professor (ECE) · Metamaterial Antennas | Embedded & IoT | Cloud & Automation | Perovskite Solar Cells">
 <meta property="og:type" content="website">
 <meta name="robots" content="index,follow">
-<meta rel="canonical" href="https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg: #f8fafc;
-    --panel: #ffffff;
-    --ink: #0f172a;
-    --muted:#475569;
-    --line:#e2e8f0;
-    --chip:#f1f5f9;
-    --accent:#2563eb;
-    --accent-soft:#e0edff;
-    --shadow-soft:0 6px 24px rgba(15,23,42,0.08);
-  }
+:root {
+  --bg: #f5f3ef;
+  --panel: #ffffff;
+  --ink: #0e0c0a;
+  --muted: #6b6560;
+  --light: #b5b0aa;
+  --line: #e8e3dc;
+  --gold: #b8860b;
+  --gold-soft: #fdf8ee;
+  --gold-mid: #e8c96a;
+  --navy: #0f1e38;
+  --navy-mid: #1a3260;
+  --accent: #c84b0f;
+  --accent-soft: #fef0e8;
+  --shadow: 0 4px 24px rgba(14,12,10,0.09);
+  --shadow-lg: 0 12px 48px rgba(14,12,10,0.14);
+}
 
-  body[data-theme="dark"]{
-    --bg: #020617;
-    --panel: #020617;
-    --ink: #e5e7eb;
-    --muted:#9ca3af;
-    --line:#1f2937;
-    --chip:#020617;
-    --accent:#38bdf8;
-    --accent-soft:#082f49;
-    --shadow-soft:0 14px 40px rgba(0,0,0,0.75);
-  }
+body[data-theme="dark"] {
+  --bg: #0b0a09;
+  --panel: #121110;
+  --ink: #ede9e3;
+  --muted: #9b958e;
+  --light: #524e49;
+  --line: #232018;
+  --gold: #d4a833;
+  --gold-soft: #1a1508;
+  --gold-mid: #8a6f28;
+  --navy: #a8c0e8;
+  --navy-mid: #6e9bd4;
+  --accent: #e26b3a;
+  --accent-soft: #1e100a;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.6);
+}
 
-  *{box-sizing:border-box}
-  html,body{
-    margin:0;padding:0;
-    background:var(--bg);
-    color:var(--ink);
-    font:15px/1.6 "Inter", system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
-    -webkit-font-smoothing:antialiased;
-    transition:background-color .25s ease,color .25s ease;
-  }
-  a{color:var(--accent);text-underline-offset:2px}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:1040px;margin:0 auto;padding:20px 16px 26px;}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .top-bar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:10px;
-  }
-  .brand-mini{
-    font-size:11px;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--muted);
-  }
-  .theme-toggle{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    font-size:11px;
-    border-radius:999px;
-    border:1px solid var(--line);
-    cursor:pointer;
-    padding:4px 9px;
-    background:var(--panel);
-    color:var(--muted);
-    box-shadow:0 2px 8px rgba(15,23,42,0.08);
-  }
-  .theme-toggle span.icon{
-    width:18px;height:18px;
-    border-radius:999px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--accent-soft);
-  }
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s, color 0.3s;
+}
 
-  header{
-    display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between;
-    background: linear-gradient(135deg, #eef2ff 0%, #ecfeff 35%, #f0f9ff 100%);
-    border:1px solid var(--line);border-radius:20px;padding:18px 20px;
-    box-shadow: var(--shadow-soft);
-    animation:fadeInUp 0.5s ease-out;
-  }
-  body[data-theme="dark"] header{
-    background:linear-gradient(135deg,#0b1120,#020617);
-  }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-  header h1{margin:0 0 6px 0;font-size:30px;line-height:1.15;font-weight:800}
-  header .headline{font-size:16px;color:var(--ink);margin:0 0 8px 0}
-  header .meta{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:14px}
-  header .meta span, header .meta a{white-space:nowrap}
+/* ─── TOP BAR ─── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-  .avatar{
-    width:112px;height:112px;border-radius:50%;
-    border:3px solid #fff; outline:2px solid var(--line); object-fit:cover;display:block;
-    box-shadow:0 6px 18px rgba(2,6,23,0.15);
-  }
+.topbar-brand {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
 
-  .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:16px}
-  @media(min-width:980px){.grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr);}}
-  section{
-    background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;
-    box-shadow: var(--shadow-soft);
-    animation:fadeInUp 0.5s ease-out;
-  }
-  h3{margin:0 0 8px 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#64748b}
-  body[data-theme="dark"] h3{color:var(--muted);}
-  p{margin:6px 0}
-  ul{margin:6px 0 0 18px}
+.topbar-right { display: flex; align-items: center; gap: 10px; }
 
-  .chip{
-    display:inline-flex;align-items:center;border:1px solid var(--line);
-    background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);
-    border-radius:999px;padding:6px 12px;margin:6px 8px 0 0;font-size:12px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
-    transition:background-color .2s ease, transform .15s ease, box-shadow .15s ease;
-  }
-  body[data-theme="dark"] .chip{
-    background:linear-gradient(135deg,#020617,#0b1120);
-    box-shadow:none;
-  }
-  .chip:hover{
-    transform:translateY(-1px);
-    box-shadow:0 3px 9px rgba(15,23,42,0.15);
-  }
-  .chip--accent{background:linear-gradient(135deg,#eff6ff 0%,#eef2ff 100%);border-color:#dbeafe}
-  body[data-theme="dark"] .chip--accent{
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-  }
+.btn-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; font-weight: 500;
+  background: var(--bg); border: 1px solid var(--line);
+  color: var(--muted); border-radius: 999px;
+  padding: 5px 12px; cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-toggle:hover { background: var(--line); }
 
-  .row{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
-  .role{font-weight:700}
-  .org{color:#334155}
-  body[data-theme="dark"] .org{color:var(--muted);}
-  .when{margin-left:auto;color:#64748b;font-size:12px}
-  body[data-theme="dark"] .when{color:var(--muted);}
+.btn-dl {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; font-weight: 600;
+  background: var(--navy); color: #fff;
+  border: none; border-radius: 999px;
+  padding: 6px 16px; cursor: pointer; text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
+.btn-dl:hover { opacity: 0.88; text-decoration: none; }
 
-  footer{margin:18px 0 0 0;color:var(--muted);font-size:12px;text-align:center}
+/* ─── HERO ─── */
+.hero {
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 56px 32px 48px;
+}
 
-  .btn-primary{
-    display:inline-block;background:var(--accent);color:#fff;
-    padding:8px 12px;border-radius:8px;text-decoration:none;font-size:14px;
-    box-shadow:0 8px 20px rgba(37,99,235,0.35);
-    transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
-  }
-  .btn-primary:hover{
-    text-decoration:none;
-    transform:translateY(-1px);
-    box-shadow:0 12px 26px rgba(37,99,235,0.45);
-    filter:brightness(1.03);
-  }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,134,11,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 40%;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,75,15,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
 
-  #pub-meta{
-    opacity:.85;
-    font-size:.95rem;
-    margin:4px 0 8px 0;
-    color: var(--muted);
-  }
-  #pub-list{
-    margin:6px 0 0 18px;
-  }
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
 
-  /* Peer review area */
-  #peer-meta{
-    opacity:.85;
-    font-size:.95rem;
-    margin:4px 0 8px 0;
-    color: var(--muted);
-  }
+.avatar-wrap { position: relative; flex-shrink: 0; }
 
-  #peer-review-list{
-    margin:10px 0 0 0;
-    padding:0;
-  }
+.avatar {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 3px solid rgba(184,134,11,0.7);
+  outline: 1px solid rgba(255,255,255,0.15);
+  object-fit: cover;
+  display: block;
+}
 
-  .peer-card{
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:12px 14px;
-    margin:0 0 10px 0;
-    background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);
-    box-shadow:0 4px 14px rgba(15,23,42,0.06);
-  }
+.avatar-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(184,134,11,0.25);
+}
 
-  body[data-theme="dark"] .peer-card{
-    background:linear-gradient(135deg,#020617,#0b1120);
-    box-shadow:none;
-  }
+.hero-text { flex: 1 1 320px; }
 
-  .peer-title{
-    font-weight:700;
-    margin:0 0 4px 0;
-    color:var(--ink);
-  }
+.hero-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
 
-  .peer-sub{
-    color:var(--muted);
-    font-size:13px;
-    margin:0;
-  }
+.hero-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 4.5vw, 46px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
 
-  .peer-count{
-    display:inline-flex;
-    align-items:center;
-    border:1px solid var(--line);
-    background:var(--chip);
-    border-radius:999px;
-    padding:4px 10px;
-    margin-top:8px;
-    font-size:12px;
-    color:var(--ink);
-  }
+.hero-headline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
 
-  @keyframes fadeInUp{
-    from{opacity:0;transform:translateY(10px);}
-    to{opacity:1;transform:translateY(0);}
-  }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+
+.tag {
+  font-size: 11px; font-weight: 500;
+  padding: 4px 11px; border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+.tag-gold { background: rgba(184,134,11,0.22); color: var(--gold-mid); border: 1px solid rgba(184,134,11,0.3); }
+.tag-white { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.15); }
+
+.hero-contact { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: rgba(255,255,255,0.55); }
+.hero-contact a { color: rgba(255,255,255,0.75); text-underline-offset: 3px; }
+.hero-contact a:hover { color: var(--gold-mid); }
+
+.hero-qr-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+#qr {
+  background: #fff;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.qr-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; }
+
+/* ─── STATS STRIP ─── */
+.stats-strip {
+  background: var(--gold-soft);
+  border-bottom: 1px solid var(--line);
+  padding: 0;
+}
+.stats-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+.stat-item {
+  padding: 20px 24px;
+  border-right: 1px solid var(--line);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+.stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; display: block; }
+
+/* ─── MAIN LAYOUT ─── */
+.main-wrap { max-width: 1080px; margin: 0 auto; padding: 36px 32px 48px; }
+
+.layout { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: 28px; }
+@media (max-width: 840px) { .layout { grid-template-columns: 1fr; } }
+
+/* ─── SECTION CARDS ─── */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card-title {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ─── PROFILE ─── */
+.profile-text { font-size: 14.5px; line-height: 1.75; color: var(--ink); }
+.profile-text p + p { margin-top: 10px; }
+
+/* ─── EXPERIENCE ─── */
+.exp-item { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+.exp-item:first-child { padding-top: 0; }
+
+.exp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.exp-role { font-weight: 600; font-size: 14.5px; color: var(--ink); }
+.exp-org { font-size: 13px; color: var(--muted); }
+.exp-date {
+  font-size: 11px;
+  background: var(--gold-soft);
+  color: var(--gold);
+  border: 1px solid rgba(184,134,11,0.2);
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.exp-list {
+  list-style: none;
+  padding: 0; margin: 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.exp-list li { padding: 2px 0 2px 14px; position: relative; }
+.exp-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ─── PUBLICATIONS ─── */
+#pub-meta, #peer-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+#pub-list {
+  list-style: none;
+  padding: 0; margin: 0;
+}
+
+.pub-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.pub-item:last-child { border-bottom: none; }
+.pub-num {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: var(--gold-soft);
+  color: var(--gold);
+  border: 1px solid rgba(184,134,11,0.2);
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* ─── PEER REVIEW ─── */
+.peer-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: var(--bg);
+}
+.peer-title { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 4px; }
+.peer-sub { font-size: 12px; color: var(--muted); }
+.peer-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px; font-weight: 500;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid rgba(200,75,15,0.2);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+/* ─── SIDEBAR CHIPS ─── */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-size: 12px; font-weight: 400;
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  transition: background 0.15s, transform 0.15s;
+  cursor: default;
+}
+.chip:hover { background: var(--gold-soft); transform: translateY(-1px); }
+.chip-accent {
+  background: var(--gold-soft);
+  border-color: rgba(184,134,11,0.25);
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ─── EDUCATION ─── */
+.edu-item { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.edu-item:first-child { padding-top: 0; }
+.edu-item:last-child { border-bottom: none; }
+.edu-degree { font-weight: 600; font-size: 14px; color: var(--ink); }
+.edu-school { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.edu-year {
+  font-size: 11px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid rgba(200,75,15,0.15);
+  border-radius: 999px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* ─── HIGHLIGHTS ─── */
+.highlight-list { list-style: none; padding: 0; }
+.highlight-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.highlight-list li:last-child { border-bottom: none; }
+.highlight-list li::before {
+  content: '';
+  display: block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* ─── PROFILES LINKS ─── */
+.profile-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.profile-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 500;
+  padding: 7px 14px; border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.profile-link:hover {
+  background: var(--gold-soft);
+  border-color: rgba(184,134,11,0.3);
+  text-decoration: none;
+  color: var(--gold);
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  text-align: center;
+  padding: 24px 32px;
+  font-size: 12px;
+  color: var(--light);
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero { animation: fadeUp 0.5s ease-out; }
+.stats-strip { animation: fadeUp 0.5s 0.1s ease-out both; }
+.card { animation: fadeUp 0.5s 0.15s ease-out both; }
+
+@media (max-width: 600px) {
+  .topbar { padding: 12px 16px; }
+  .hero { padding: 36px 16px 32px; }
+  .main-wrap { padding: 24px 16px 36px; }
+  .card { padding: 18px; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2n) { border-right: none; }
+  .stat-item { border-bottom: 1px solid var(--line); }
+}
 </style>
 </head>
-
 <body data-theme="light">
-<div class="wrap">
 
-  <div class="top-bar">
-    <div class="brand-mini">DR. DHAWAN SINGH · RÉSUMÉ</div>
-    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <span class="icon" id="themeIcon">🌙</span>
-      <span id="themeLabel">Dark mode</span>
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-brand">Prof (Dr.) Dhawan Singh · Résumé</span>
+  <div class="topbar-right">
+    <button id="themeToggle" class="btn-toggle" type="button">
+      <span id="themeIcon">🌙</span>
+      <span id="themeLabel">Dark</span>
     </button>
+    <a href="Dhawan_Singh_Full_Resume.pdf" target="_blank" class="btn-dl">
+      ↓ Download PDF
+    </a>
   </div>
+</div>
 
-  <header>
-    <div style="display:flex;gap:16px;align-items:center;flex:1 1 auto;min-width:0">
-      <div style="flex-shrink:0">
-        <img src="dhawan.jpg" alt="Prof (Dr.) Dhawan Singh" class="avatar" loading="lazy">
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="avatar-wrap">
+      <img src="dhawan.jpg" alt="Prof (Dr.) Dhawan Singh" class="avatar" loading="lazy">
+      <div class="avatar-ring"></div>
+    </div>
+
+    <div class="hero-text">
+      <div class="hero-eyebrow">Professor · Electronics &amp; Communication Engineering</div>
+      <h1 class="hero-name">Prof (Dr.)<br>Dhawan Singh</h1>
+      <p class="hero-headline">Chandigarh University, Punjab, India · Ph.D. University of KwaZulu-Natal, South Africa</p>
+
+      <div class="hero-tags">
+        <span class="tag tag-gold">Metamaterial Antennas</span>
+        <span class="tag tag-gold">RCS Reduction</span>
+        <span class="tag tag-white">Embedded &amp; IoT</span>
+        <span class="tag tag-white">Cloud &amp; Automation</span>
+        <span class="tag tag-white">Perovskite Solar Cells</span>
       </div>
 
-      <div style="min-width:0">
-        <h1>Prof (Dr.) Dhawan Singh</h1>
-        <p class="headline">Professor (ECE) · Metamaterial Antennas | Embedded &amp; IoT | Cloud &amp; Automation | Perovskite Solar Cells</p>
-
-        <div class="meta">
-          <span>Chandigarh University, Punjab, India</span>
-          <span>•</span>
-          <a href="mailto:dhawan_deor@yahoo.co.in">dhawan_deor@yahoo.co.in</a>
-          <span>•</span>
-          <a href="mailto:dhawan4324@gmail.com">dhawan4324@gmail.com</a>
-          <span>•</span>
-          <a href="mailto:dhawan.e14960@cumail.in">dhawan.e14960@cumail.in</a>
-          <span>•</span>
-          <span>+91-7018743983</span>
-        </div>
-
-        <div class="meta" style="margin-top:6px">
-          <a href="https://scholar.google.co.in/citations?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-          <span>•</span>
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener noreferrer">Scopus</a>
-          <span>•</span>
-          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-          <span>•</span>
-          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <span>•</span>
-          <a href="https://orcid.org/0000-0003-4868-5806" target="_blank" rel="noopener noreferrer">ORCID</a>
-        </div>
+      <div class="hero-contact">
+        <a href="mailto:dhawan_deor@yahoo.co.in">dhawan_deor@yahoo.co.in</a>
+        <span>·</span>
+        <a href="mailto:dhawan4324@gmail.com">dhawan4324@gmail.com</a>
+        <span>·</span>
+        <span>+91-7018743983</span>
       </div>
     </div>
 
-    <div style="text-align:center">
-      <div id="qr"
-        style="display:inline-block;padding:8px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;box-shadow:0 4px 16px rgba(2,6,23,.10)">
-      </div>
-
-      <div style="margin-top:8px">
-        <a id="resumeDownload"
-           href="Dhawan_Singh_Full_Resume.pdf"
-           target="_blank"
-           style="text-decoration:underline;font-size:12px;color:#64748b">
-           Download full résumé (PDF)
-        </a>
-      </div>
-
-      <div style="margin-top:8px">
-        <a id="resumeButton"
-           href="Dhawan_Singh_Full_Resume.pdf"
-           target="_blank"
-           class="btn-primary">
-           Open Résumé
-        </a>
-      </div>
+    <div class="hero-qr-area">
+      <div id="qr"></div>
+      <span class="qr-label">SCAN TO OPEN</span>
     </div>
-  </header>
+  </div>
+</div>
 
-  <div class="grid">
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num">18+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">48+</span>
+      <span class="stat-label">Publications</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">25+</span>
+      <span class="stat-label">Patents &amp; Designs</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">1000</span>
+      <span class="stat-label">Scholar Citations</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">h-14</span>
+      <span class="stat-label">h-Index (Scholar)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">540</span>
+      <span class="stat-label">Scopus Citations</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+  <div class="layout">
+
     <main>
 
-      <section>
-        <h3>Profile</h3>
-        <p>Research-driven professor with 18+ years across academia and industry (ECE/EE/CSE). Ph.D. in Electronic Engineering (University of KwaZulu-Natal, South Africa) with specialization in metamaterial absorbers and RCS reduction. 48+ publications, 25+ patents/designs/utility models, and supervision of multiple Ph.D. and M.Tech theses.</p>
-        <p>Hands-on experience in IoT and embedded prototypes, perovskite solar cell simulations, and cloud automation. Active in curriculum design, workshops, and mentoring student innovation teams (including Smart India Hackathon 2022 Hardware finale).</p>
-      </section>
-
-      <section>
-        <h3>Experience</h3>
-        <div class="row">
-          <div class="role">Professor (ECE)</div>
-          <div class="org">· Chandigarh University</div>
-          <div class="when">2023 — Present</div>
+      <!-- PROFILE -->
+      <div class="card">
+        <div class="card-title">Profile</div>
+        <div class="profile-text">
+          <p>Research-driven professor with 18+ years across academia and industry (ECE/EE/CSE). Ph.D. in Electronic Engineering (University of KwaZulu-Natal, South Africa) with specialization in metamaterial absorbers and RCS reduction.</p>
+          <p>Hands-on experience in IoT and embedded prototypes, perovskite solar cell simulations, and cloud automation. Active in curriculum design, workshops, and mentoring student innovation teams (including Smart India Hackathon 2022 Hardware finale).</p>
         </div>
-        <ul>
-          <li>Lead teaching &amp; research in antennas, embedded/IoT, and cloud security.</li>
-          <li>Supervise Ph.D. &amp; M.Tech scholars; drive publications and patents.</li>
-          <li>Organise workshops and mentor student teams for national-level events.</li>
-        </ul>
+      </div>
 
-        <div class="row" style="margin-top:6px">
-          <div class="role">Associate Professor</div>
-          <div class="org">· Chitkara University</div>
-          <div class="when">2019 — 2023</div>
+      <!-- EXPERIENCE -->
+      <div class="card">
+        <div class="card-title">Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-row">
+            <div>
+              <div class="exp-role">Professor (ECE)</div>
+              <div class="exp-org">Chandigarh University</div>
+            </div>
+            <span class="exp-date">2023 — Present</span>
+          </div>
+          <ul class="exp-list">
+            <li>Lead teaching &amp; research in antennas, embedded/IoT, and cloud security.</li>
+            <li>Supervise Ph.D. &amp; M.Tech scholars; drive publications and patents.</li>
+            <li>Organise workshops and mentor student teams for national-level events.</li>
+          </ul>
         </div>
-        <ul>
-          <li>Set up research labs in antenna design, IoT and VLSI.</li>
-          <li>Editorial Board Member (AJSET); reviewer for Elsevier/Springer titles.</li>
-          <li>Convened 15-day Electrical Engineering research workshop (2021).</li>
-        </ul>
 
-        <div class="row" style="margin-top:6px">
-          <div class="role">Ph.D. Researcher / Demonstrator</div>
-          <div class="org">· University of KwaZulu-Natal, South Africa</div>
-          <div class="when">2016 — 2019</div>
+        <div class="exp-item">
+          <div class="exp-row">
+            <div>
+              <div class="exp-role">Associate Professor</div>
+              <div class="exp-org">Chitkara University</div>
+            </div>
+            <span class="exp-date">2019 — 2023</span>
+          </div>
+          <ul class="exp-list">
+            <li>Set up research labs in antenna design, IoT and VLSI.</li>
+            <li>Editorial Board Member (AJSET); reviewer for Elsevier/Springer titles.</li>
+            <li>Convened 15-day Electrical Engineering research workshop (2021).</li>
+          </ul>
         </div>
-        <ul>
-          <li>Developed shorted-stub metamaterial absorbers for patch antenna RCS reduction.</li>
-          <li>Delivered undergraduate labs in RF and microwave engineering.</li>
-          <li>Recognised among “Top 11 Published Student Researchers” (2018).</li>
+
+        <div class="exp-item">
+          <div class="exp-row">
+            <div>
+              <div class="exp-role">Ph.D. Researcher / Demonstrator</div>
+              <div class="exp-org">University of KwaZulu-Natal, South Africa</div>
+            </div>
+            <span class="exp-date">2016 — 2019</span>
+          </div>
+          <ul class="exp-list">
+            <li>Developed shorted-stub metamaterial absorbers for patch antenna RCS reduction.</li>
+            <li>Delivered undergraduate labs in RF and microwave engineering.</li>
+            <li>Recognised among "Top 11 Published Student Researchers" (2018).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SELECTED RESEARCH -->
+      <div class="card">
+        <div class="card-title">Selected Research &amp; IP</div>
+        <ul class="exp-list">
+          <li><em>Indian Journal of Physics</em> (2025): Lead-free perovskite solar cell simulations (CsSnCl<sub>3</sub> based).</li>
+          <li><em>CRC Book Chapter</em> (2025): Scheduling in multi-cloud architecture using optimisation techniques.</li>
+          <li><em>PIER B / IJMOT</em> (2023): Multiband rectenna and compact dual-band antenna designs.</li>
+          <li>Smart Access-Controlled Helmet; IoT Gas Cylinder Stand; AI Intercom; Solar Lawn Mower — recent granted IP.</li>
         </ul>
-      </section>
+      </div>
 
-      <section>
-        <h3>Selected Research &amp; IP</h3>
-        <ul>
-          <li>Indian Journal of Physics (2025): Lead-free perovskite solar cell simulations (CsSnCl<sub>3</sub> based).</li>
-          <li>CRC Book Chapter (2025): Scheduling in multi-cloud architecture using optimisation techniques.</li>
-          <li>PIER B / IJMOT (2023): Multiband rectenna and compact dual-band antenna designs.</li>
-          <li>Smart Access-Controlled Helmet; IoT Gas Cylinder Stand; AI Intercom; Solar Lawn Mower – recent granted IP.</li>
-        </ul>
-      </section>
+      <!-- PUBLICATIONS -->
+      <div class="card">
+        <div class="card-title">Publications <span style="font-size:9px;color:var(--muted);letter-spacing:0.1em;font-weight:400;text-transform:none;margin-left:4px">(auto-updated from ORCID)</span></div>
+        <div id="pub-meta">Loading publications from ORCID…</div>
+        <ol id="pub-list" style="list-style:none;padding:0;"></ol>
+      </div>
 
-      <section>
-        <h3>Publications (Auto-updated from ORCID)</h3>
-        <div id="pub-meta">Loading publications…</div>
-        <ol id="pub-list"></ol>
-      </section>
-
-      <section>
-        <h3>Peer Review Activity (Auto-updated from ORCID)</h3>
+      <!-- PEER REVIEW -->
+      <div class="card">
+        <div class="card-title">Peer Review Activity <span style="font-size:9px;color:var(--muted);letter-spacing:0.1em;font-weight:400;text-transform:none;margin-left:4px">(auto-updated from ORCID)</span></div>
         <div id="peer-meta">Loading peer review activity…</div>
         <div id="peer-review-list"></div>
-      </section>
+      </div>
 
     </main>
 
     <aside>
-      <section>
-        <h3>Skills</h3>
-        <span class="chip chip--accent">CST · HFSS · ADS · Antenna Magus</span>
-        <span class="chip">Metamaterial Antennas (RCS/FSS/EBG/MIMO)</span>
-        <span class="chip">Arduino · STM32 · Raspberry Pi</span>
-        <span class="chip">C/C++ · Embedded C · VHDL · MATLAB</span>
-        <span class="chip">AWS · Terraform · Jenkins</span>
-        <span class="chip">OrCAD · Proteus · Altium · Multisim</span>
-        <span class="chip">Perovskite Solar Cells</span>
-      </section>
 
-      <section>
-        <h3>Education</h3>
-        <p><strong>Ph.D., Electronic Engineering</strong><br>
-        University of KwaZulu-Natal, South Africa — 2019<br>
-        <span style="color:#64748b;">RCS reduction using shorted-stub metamaterial absorbers</span></p>
+      <!-- ACADEMIC PROFILES -->
+      <div class="card">
+        <div class="card-title">Academic Profiles</div>
+        <div class="profile-links">
+          <a href="https://scholar.google.co.in/citations?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener" class="profile-link">Google Scholar</a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener" class="profile-link">Scopus</a>
+          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener" class="profile-link">ResearchGate</a>
+          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener" class="profile-link">LinkedIn</a>
+          <a href="https://orcid.org/0000-0003-4868-5806" target="_blank" rel="noopener" class="profile-link">ORCID</a>
+        </div>
+      </div>
 
-        <p><strong>M.Tech (ECE)</strong><br>
-        Eternal University — 2013 <span style="color:#64748b;">(75%)</span></p>
+      <!-- SKILLS -->
+      <div class="card">
+        <div class="card-title">Technical Skills</div>
+        <div class="chips">
+          <span class="chip chip-accent">CST · HFSS · ADS</span>
+          <span class="chip chip-accent">Antenna Magus</span>
+          <span class="chip">Metamaterial / RCS / FSS</span>
+          <span class="chip">EBG / MIMO Antennas</span>
+          <span class="chip">Arduino · STM32</span>
+          <span class="chip">Raspberry Pi</span>
+          <span class="chip">C/C++ · Embedded C</span>
+          <span class="chip">VHDL · MATLAB</span>
+          <span class="chip">AWS · Terraform</span>
+          <span class="chip">Jenkins · CI/CD</span>
+          <span class="chip">OrCAD · Proteus</span>
+          <span class="chip">Altium · Multisim</span>
+          <span class="chip">Perovskite Solar Cells</span>
+        </div>
+      </div>
 
-        <p><strong>M.Sc. (Electronics)</strong><br>
-        Jiwaji University — 2006 <span style="color:#64748b;">(65%)</span></p>
+      <!-- EDUCATION -->
+      <div class="card">
+        <div class="card-title">Education</div>
 
-        <p><strong>UGC-NET (Electronic Science)</strong><br>
-        Qualified — 2014</p>
-      </section>
+        <div class="edu-item">
+          <div class="edu-degree">Ph.D., Electronic Engineering</div>
+          <div class="edu-school">University of KwaZulu-Natal, South Africa</div>
+          <div class="edu-school" style="font-size:12px;margin-top:3px;color:var(--muted)">RCS reduction using shorted-stub metamaterial absorbers</div>
+          <span class="edu-year">2019</span>
+        </div>
 
-      <section>
-        <h3>Highlights</h3>
-        <ul>
-          <li>Publications: 48+; Patents/Designs/Utility: 25+.</li>
-          <li>Google Scholar citations ≈ 1000 (h-14, i10-22); Scopus citations ≈ 540 (h-10).</li>
-          <li>Mentor: SIH 2022 Hardware (finale).</li>
-          <li>Microsoft Azure AI-900 certified.</li>
-          <li>Member: IEEE, IAENG, RSRI.</li>
+        <div class="edu-item">
+          <div class="edu-degree">M.Tech (ECE)</div>
+          <div class="edu-school">Eternal University · 75%</div>
+          <span class="edu-year">2013</span>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">M.Sc. (Electronics)</div>
+          <div class="edu-school">Jiwaji University · 65%</div>
+          <span class="edu-year">2006</span>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">UGC-NET (Electronic Science)</div>
+          <div class="edu-school">Qualified</div>
+          <span class="edu-year">2014</span>
+        </div>
+      </div>
+
+      <!-- HIGHLIGHTS -->
+      <div class="card">
+        <div class="card-title">Highlights</div>
+        <ul class="highlight-list">
+          <li>48+ publications; 25+ patents, designs &amp; utility models</li>
+          <li>Google Scholar: ~1000 citations · h-14 · i10-22</li>
+          <li>Scopus: ~540 citations · h-10</li>
+          <li>Mentor — SIH 2022 Hardware (National Finale)</li>
+          <li>Microsoft Azure AI-900 Certified</li>
+          <li>Member: IEEE · IAENG · RSRI</li>
+          <li>Top 11 Published Student Researchers, UKZN (2018)</li>
         </ul>
-      </section>
+      </div>
+
     </aside>
   </div>
+</div>
 
-  <footer>
-    Print: use your browser’s <b>Print / Save as PDF</b> for a one-page export.
-  </footer>
-
+<div class="footer">
+  Print or save as PDF using your browser's <strong>Print</strong> menu &nbsp;·&nbsp; Prof (Dr.) Dhawan Singh &nbsp;·&nbsp; Chandigarh University
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const siteUrl = "https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/";
-    const resumeUrl = `${siteUrl}Dhawan_Singh_Full_Resume.pdf`;
-    const ORCID_ID = "0000-0003-4868-5806";
+<script src="assets/publications.js" onerror="void 0"></script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const ORCID_ID = "0000-0003-4868-5806";
+  const resumeUrl = "Dhawan_Singh_Full_Resume.pdf";
+
+  // QR Code
+  try {
     new QRCode(document.getElementById("qr"), {
-      text: resumeUrl,
-      width: 132,
-      height: 132,
+      text: window.location.href || resumeUrl,
+      width: 100, height: 100,
       correctLevel: QRCode.CorrectLevel.H
     });
+  } catch(e) {}
 
-    document.getElementById("resumeDownload").href = resumeUrl;
-    document.getElementById("resumeButton").href = resumeUrl;
+  // Theme toggle
+  const body = document.body;
+  const toggle = document.getElementById('themeToggle');
+  const icon = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
 
-    const body = document.body;
-    const toggle = document.getElementById('themeToggle');
-    const icon = document.getElementById('themeIcon');
-    const label = document.getElementById('themeLabel');
+  function setTheme(t) {
+    body.setAttribute('data-theme', t);
+    icon.textContent = t === 'dark' ? '☀️' : '🌙';
+    label.textContent = t === 'dark' ? 'Light' : 'Dark';
+    try { localStorage.setItem('drds-theme', t); } catch(e) {}
+  }
 
-    function setTheme(theme){
-      body.setAttribute('data-theme', theme);
-      if(theme === 'dark'){
-        icon.textContent = '☀️';
-        label.textContent = 'Light mode';
-      }else{
-        icon.textContent = '🌙';
-        label.textContent = 'Dark mode';
-      }
-      try { localStorage.setItem('drds-theme', theme); } catch(e) {}
-    }
+  try {
+    const saved = localStorage.getItem('drds-theme');
+    if (saved === 'dark' || saved === 'light') setTheme(saved);
+  } catch(e) {}
 
-    try {
-      const saved = localStorage.getItem('drds-theme');
-      if(saved === 'dark' || saved === 'light') setTheme(saved);
-    } catch(e) {}
-
-    toggle.addEventListener('click', function(){
-      const current = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      setTheme(current);
-    });
-
-    function safeText(value, fallback = '') {
-      return typeof value === 'string' && value.trim() ? value.trim() : fallback;
-    }
-
-    function extractYear(dateObj) {
-      if (!dateObj) return '';
-      return dateObj.year?.value || '';
-    }
-
-    function extractWorkUrl(work) {
-      const externalIds = work['external-ids']?.['external-id'] || [];
-      const doi = externalIds.find(item => (item['external-id-type'] || '').toLowerCase() === 'doi');
-      if (doi?.['external-id-value']) {
-        return `https://doi.org/${doi['external-id-value']}`;
-      }
-      return work.url?.value || '';
-    }
-
-    async function loadPublications() {
-      const pubMeta = document.getElementById('pub-meta');
-      const pubList = document.getElementById('pub-list');
-      pubMeta.textContent = 'Loading publications…';
-      pubList.innerHTML = '';
-
-      try {
-        const response = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/works`, {
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (!response.ok) throw new Error(`ORCID works request failed: ${response.status}`);
-
-        const data = await response.json();
-        const groups = Array.isArray(data.group) ? data.group : [];
-
-        const publications = groups.map(group => {
-          const summary = group['work-summary']?.[0] || {};
-          const title = safeText(summary.title?.title?.value, 'Untitled publication');
-          const journal = safeText(summary['journal-title']?.value, '');
-          const year = extractYear(summary['publication-date']);
-          const type = safeText(summary.type, '');
-          const url = extractWorkUrl(summary);
-          return { title, journal, year, type, url };
-        }).sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
-
-        if (!publications.length) {
-          pubMeta.textContent = 'No public works found on ORCID.';
-          pubList.innerHTML = '<li>Make your ORCID works public to display them here.</li>';
-          return;
-        }
-
-        pubMeta.textContent = `${publications.length} publication(s) loaded from your public ORCID record.`;
-
-        publications.slice(0, 12).forEach(pub => {
-          const li = document.createElement('li');
-          const parts = [];
-          if (pub.year) parts.push(pub.year);
-          if (pub.journal) parts.push(pub.journal);
-          if (pub.type) parts.push(pub.type.replace(/-/g, ' '));
-          const meta = parts.length ? ` — ${parts.join(' · ')}` : '';
-
-          if (pub.url) {
-            const a = document.createElement('a');
-            a.href = pub.url;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            a.textContent = pub.title;
-            li.appendChild(a);
-            li.appendChild(document.createTextNode(meta));
-          } else {
-            li.textContent = `${pub.title}${meta}`;
-          }
-
-          pubList.appendChild(li);
-        });
-      } catch (error) {
-        console.error('Failed to load ORCID publications:', error);
-        pubMeta.textContent = 'Unable to load publications.';
-        pubList.innerHTML = '<li>Please check ORCID visibility settings or try again later.</li>';
-      }
-    }
-
-    async function loadPeerReviews() {
-      const peerMeta = document.getElementById('peer-meta');
-      const peerList = document.getElementById('peer-review-list');
-      peerMeta.textContent = 'Loading peer review activity…';
-      peerList.innerHTML = '';
-
-      try {
-        const response = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/peer-reviews`, {
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (!response.ok) {
-          throw new Error(`ORCID peer review request failed: ${response.status}`);
-        }
-
-        const data = await response.json();
-        const groups = Array.isArray(data.group) ? data.group : [];
-
-        if (!groups.length) {
-          peerMeta.textContent = 'No public peer review activity found.';
-          peerList.innerHTML = "<p style='color:var(--muted);margin:0'>Make sure your ORCID peer reviews are public.</p>";
-          return;
-        }
-
-        peerMeta.textContent = `${groups.length} peer review group(s) found on ORCID.`;
-
-        groups.forEach((group) => {
-          let journalName = 'Peer Review Activity';
-          let reviewCount = 0;
-
-          const peerReviewGroups = group['peer-review-group'] || [];
-          const summaries = peerReviewGroups[0]?.['peer-review-summary'] || [];
-          reviewCount = summaries.length;
-
-          if (summaries.length > 0) {
-            const first = summaries[0];
-            if (first['convening-organization']?.name) {
-              journalName = first['convening-organization'].name;
-            } else if (first['review-group-id']?.['external-identifier']?.value) {
-              journalName = first['review-group-id']['external-identifier'].value;
-            }
-          }
-
-          const card = document.createElement('div');
-          card.className = 'peer-card';
-
-          const title = document.createElement('p');
-          title.className = 'peer-title';
-          title.textContent = journalName;
-
-          const sub = document.createElement('p');
-          sub.className = 'peer-sub';
-          sub.textContent = 'Review activity imported from your public ORCID record';
-
-          const count = document.createElement('span');
-          count.className = 'peer-count';
-          count.textContent = `${reviewCount} review(s)`;
-
-          card.appendChild(title);
-          card.appendChild(sub);
-          card.appendChild(count);
-          peerList.appendChild(card);
-        });
-      } catch (error) {
-        console.error('Failed to load ORCID peer review activity:', error);
-        peerMeta.textContent = 'Unable to load peer review activity.';
-        peerList.innerHTML = "<p style='color:var(--muted);margin:0'>Please check your ORCID visibility settings.</p>";
-      }
-    }
-
-    loadPublications();
-    loadPeerReviews();
+  toggle.addEventListener('click', function () {
+    setTheme(body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
-</script>
 
+  // Load ORCID Publications
+  async function loadPublications() {
+    const meta = document.getElementById("pub-meta");
+    const list = document.getElementById("pub-list");
+    try {
+      const res = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/works`, {
+        headers: { "Accept": "application/json" }
+      });
+      if (!res.ok) throw new Error(res.status);
+      const data = await res.json();
+      const works = (data.group || []);
+      if (!works.length) {
+        meta.textContent = "No public works found on ORCID.";
+        return;
+      }
+      meta.textContent = `${works.length} works found on ORCID · Sorted by recent`;
+      works.slice(0, 20).forEach(function(g, i) {
+        const summary = (g['work-summary'] && g['work-summary'][0]) || {};
+        const title = (summary.title && summary.title.title && summary.title.title.value) || 'Untitled';
+        const year = (summary['publication-date'] && summary['publication-date'].year && summary['publication-date'].year.value) || '';
+        const journal = (summary['journal-title'] && summary['journal-title'].value) || '';
+        const li = document.createElement('li');
+        li.className = 'pub-item';
+        li.innerHTML = '<span class="pub-num">' + (i+1) + '</span>' +
+          '<strong>' + title + '</strong>' +
+          (journal ? ' <span style="color:var(--muted)">· ' + journal + '</span>' : '') +
+          (year ? ' <span style="color:var(--light);font-size:12px"> · ' + year + '</span>' : '');
+        list.appendChild(li);
+      });
+    } catch(e) {
+      meta.textContent = "Unable to load from ORCID. Check your profile visibility settings.";
+    }
+  }
+
+  // Load ORCID Peer Reviews
+  async function loadPeerReviews() {
+    const meta = document.getElementById("peer-meta");
+    const list = document.getElementById("peer-review-list");
+    try {
+      const res = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/peer-reviews`, {
+        headers: { "Accept": "application/json" }
+      });
+      if (!res.ok) throw new Error(res.status);
+      const data = await res.json();
+      const groups = data.group || [];
+      if (!groups.length) {
+        meta.textContent = "No public peer review activity found on ORCID.";
+        return;
+      }
+      meta.textContent = groups.length + ' peer review group(s) on ORCID';
+      groups.forEach(function(group) {
+        const prGroups = group['peer-review-group'] || [];
+        const summaries = (prGroups[0] && prGroups[0]['peer-review-summary']) ? prGroups[0]['peer-review-summary'] : [];
+        const reviewCount = summaries.length;
+        let journalName = 'Peer Review Activity';
+        if (summaries.length > 0) {
+          const first = summaries[0];
+          if (first['convening-organization'] && first['convening-organization']['name']) {
+            journalName = first['convening-organization']['name'];
+          } else if (first['review-group-id'] && first['review-group-id']['external-identifier'] && first['review-group-id']['external-identifier']['value']) {
+            journalName = first['review-group-id']['external-identifier']['value'];
+          }
+        }
+        const card = document.createElement('div');
+        card.className = 'peer-card';
+        card.innerHTML = '<div class="peer-title">' + journalName + '</div>' +
+          '<div class="peer-sub">Review activity from your public ORCID record</div>' +
+          '<span class="peer-badge">' + reviewCount + ' review(s)</span>';
+        list.appendChild(card);
+      });
+    } catch(e) {
+      meta.textContent = "Unable to load peer review activity. Check ORCID visibility settings.";
+    }
+  }
+
+  loadPublications();
+  loadPeerReviews();
+});
+</script>
 </body>
 </html>
