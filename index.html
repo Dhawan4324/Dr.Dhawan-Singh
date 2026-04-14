@@ -1,973 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prof (Dr.) Dhawan Singh — Résumé</title>
-<meta name="description" content="One-page résumé of Prof (Dr.) Dhawan Singh — Professor (ECE), Metamaterial Antennas, Embedded & IoT, Cloud & Automation, Solar Cells.">
-<meta property="og:title" content="Prof (Dr.) Dhawan Singh — Résumé">
-<meta property="og:description" content="Professor (ECE) · Metamaterial Antennas | Embedded & IoT | Cloud & Automation | Perovskite Solar Cells">
-<meta property="og:type" content="website">
-<meta name="robots" content="index,follow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prof (Dr.) Dhawan Singh — Résumé</title>
+  <meta name="description" content="One-page résumé of Prof (Dr.) Dhawan Singh — Professor (ECE), Metamaterial Antennas, Embedded & IoT, Cloud & Automation, Solar Cells.">
+  <meta property="og:title" content="Prof (Dr.) Dhawan Singh — Résumé">
+  <meta property="og:description" content="Professor (ECE) · Metamaterial Antennas | Embedded & IoT | Cloud & Automation | Perovskite Solar Cells">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index,follow">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #f5f3ef;
-  --panel: #ffffff;
-  --ink: #0e0c0a;
-  --muted: #6b6560;
-  --light: #b5b0aa;
-  --line: #e8e3dc;
-  --gold: #b8860b;
-  --gold-soft: #fdf8ee;
-  --gold-mid: #e8c96a;
-  --navy: #0f1e38;
-  --navy-mid: #1a3260;
-  --accent: #c84b0f;
-  --accent-soft: #fef0e8;
-  --shadow: 0 4px 24px rgba(14,12,10,0.09);
-  --shadow-lg: 0 12px 48px rgba(14,12,10,0.14);
-}
-
-body[data-theme="dark"] {
-  --bg: #0b0a09;
-  --panel: #121110;
-  --ink: #ede9e3;
-  --muted: #9b958e;
-  --light: #524e49;
-  --line: #232018;
-  --gold: #d4a833;
-  --gold-soft: #1a1508;
-  --gold-mid: #8a6f28;
-  --navy: #a8c0e8;
-  --navy-mid: #6e9bd4;
-  --accent: #e26b3a;
-  --accent-soft: #1e100a;
-  --shadow: 0 4px 24px rgba(0,0,0,0.4);
-  --shadow-lg: 0 12px 48px rgba(0,0,0,0.6);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html, body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 15px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  transition: background 0.3s, color 0.3s;
-}
-
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; text-underline-offset: 3px; }
-
-/* ─── TOP BAR ─── */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 32px;
-  border-bottom: 1px solid var(--line);
-  background: var(--panel);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.topbar-brand {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-.topbar-right { display: flex; align-items: center; gap: 10px; }
-
-.btn-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  color: var(--muted);
-  border-radius: 999px;
-  padding: 5px 12px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.btn-toggle:hover { background: var(--line); }
-
-.btn-dl {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  background: var(--navy);
-  color: #fff;
-  border: none;
-  border-radius: 999px;
-  padding: 6px 16px;
-  cursor: pointer;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  transition: opacity 0.2s;
-}
-body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
-.btn-dl:hover { opacity: 0.88; text-decoration: none; }
-
-/* ─── HERO ─── */
-.hero {
-  background: var(--navy);
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-  padding: 56px 32px 48px;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -80px; right: -80px;
-  width: 420px; height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,134,11,0.18) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -60px; left: 40%;
-  width: 300px; height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,75,15,0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.hero-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: flex;
-  gap: 36px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.avatar-wrap { position: relative; flex-shrink: 0; }
-
-.avatar {
-  width: 120px; height: 120px;
-  border-radius: 50%;
-  border: 3px solid rgba(184,134,11,0.7);
-  outline: 1px solid rgba(255,255,255,0.15);
-  object-fit: cover;
-  display: block;
-}
-
-.avatar-ring {
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 1px solid rgba(184,134,11,0.25);
-}
-
-.hero-text { flex: 1 1 320px; }
-
-.hero-eyebrow {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold-mid);
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.hero-name {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(28px, 4.5vw, 46px);
-  font-weight: 900;
-  line-height: 1.1;
-  color: #ffffff;
-  margin-bottom: 12px;
-  letter-spacing: -0.01em;
-}
-
-.hero-headline {
-  font-size: 14px;
-  color: rgba(255,255,255,0.72);
-  margin-bottom: 18px;
-  line-height: 1.5;
-}
-
-.hero-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
-
-.tag {
-  font-size: 11px;
-  font-weight: 500;
-  padding: 4px 11px;
-  border-radius: 999px;
-  letter-spacing: 0.03em;
-}
-.tag-gold { background: rgba(184,134,11,0.22); color: var(--gold-mid); border: 1px solid rgba(184,134,11,0.3); }
-.tag-white { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.15); }
-
-.hero-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.55);
-}
-.hero-contact a { color: rgba(255,255,255,0.75); text-underline-offset: 3px; }
-.hero-contact a:hover { color: var(--gold-mid); }
-
-.hero-qr-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-#qr {
-  background: #fff;
-  padding: 8px;
-  border-radius: 10px;
-}
-
-.qr-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; }
-
-/* ─── STATS STRIP ─── */
-.stats-strip {
-  background: var(--gold-soft);
-  border-bottom: 1px solid var(--line);
-  padding: 0;
-}
-.stats-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-}
-.stat-item {
-  padding: 20px 24px;
-  border-right: 1px solid var(--line);
-  text-align: center;
-}
-.stat-item:last-child { border-right: none; }
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--gold);
-  line-height: 1;
-  display: block;
-}
-.stat-label {
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 4px;
-  display: block;
-}
-
-/* ─── MAIN LAYOUT ─── */
-.main-wrap {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 36px 32px 48px;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(320px, 1fr);
-  gap: 28px;
-}
-@media (max-width: 840px) {
-  .layout { grid-template-columns: 1fr; }
-}
-
-/* ─── SECTION CARDS ─── */
-.card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: var(--shadow);
-}
-
-.card-title {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 600;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.card-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--line);
-}
-
-/* ─── PROFILE ─── */
-.profile-text { font-size: 14.5px; line-height: 1.75; color: var(--ink); }
-.profile-text p + p { margin-top: 10px; }
-
-/* ─── EXPERIENCE ─── */
-.exp-item { padding: 14px 0; border-bottom: 1px solid var(--line); }
-.exp-item:last-child { border-bottom: none; padding-bottom: 0; }
-.exp-item:first-child { padding-top: 0; }
-
-.exp-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 6px;
-}
-.exp-role { font-weight: 600; font-size: 14.5px; color: var(--ink); }
-.exp-org { font-size: 13px; color: var(--muted); }
-.exp-date {
-  font-size: 11px;
-  background: var(--gold-soft);
-  color: var(--gold);
-  border: 1px solid rgba(184,134,11,0.2);
-  padding: 2px 9px;
-  border-radius: 999px;
-  white-space: nowrap;
-  font-weight: 500;
-}
-.exp-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 13.5px;
-  color: var(--muted);
-}
-.exp-list li { padding: 2px 0 2px 14px; position: relative; }
-.exp-list li::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 10px;
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--gold);
-}
-
-/* ─── PUBLICATIONS + PEER META ─── */
-#pub-meta, #peer-meta {
-  font-size: 12px;
-  color: var(--muted);
-  margin-bottom: 12px;
-  padding: 8px 12px;
-  background: var(--bg);
-  border-radius: 8px;
-  border: 1px solid var(--line);
-}
-
-#pub-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pub-item {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--ink);
-}
-.pub-item:last-child { border-bottom: none; }
-
-.pub-num {
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  background: var(--gold-soft);
-  color: var(--gold);
-  border: 1px solid rgba(184,134,11,0.2);
-  border-radius: 50%;
-  font-size: 10px;
-  font-weight: 600;
-  text-align: center;
-  line-height: 20px;
-  margin-right: 8px;
-  vertical-align: middle;
-  flex-shrink: 0;
-}
-
-/* ─── PEER REVIEW ─── */
-#peer-review-list {
-  margin: 0;
-  padding: 0;
-}
-
-.peer-card {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 12px 14px;
-  margin-bottom: 10px;
-  background: var(--bg);
-}
-
-.peer-title {
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-
-.peer-sub {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.45;
-}
-
-.peer-badge {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 11px;
-  font-weight: 500;
-  background: var(--accent-soft);
-  color: var(--accent);
-  border: 1px solid rgba(200,75,15,0.2);
-  border-radius: 999px;
-  padding: 3px 10px;
-}
-
-/* ─── SIDEBAR CHIPS ─── */
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip {
-  font-size: 12px;
-  font-weight: 400;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--bg);
-  color: var(--ink);
-  transition: background 0.15s, transform 0.15s;
-  cursor: default;
-}
-.chip:hover { background: var(--gold-soft); transform: translateY(-1px); }
-.chip-accent {
-  background: var(--gold-soft);
-  border-color: rgba(184,134,11,0.25);
-  color: var(--gold);
-  font-weight: 500;
-}
-
-/* ─── EDUCATION ─── */
-.edu-item { padding: 12px 0; border-bottom: 1px solid var(--line); }
-.edu-item:first-child { padding-top: 0; }
-.edu-item:last-child { border-bottom: none; }
-.edu-degree { font-weight: 600; font-size: 14px; color: var(--ink); }
-.edu-school { font-size: 13px; color: var(--muted); margin-top: 2px; }
-.edu-year {
-  font-size: 11px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  border: 1px solid rgba(200,75,15,0.15);
-  border-radius: 999px;
-  padding: 2px 8px;
-  display: inline-block;
-  margin-top: 5px;
-  font-weight: 500;
-}
-
-/* ─── HIGHLIGHTS ─── */
-.highlight-list { list-style: none; padding: 0; }
-.highlight-list li {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 13.5px;
-  color: var(--ink);
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-.highlight-list li:last-child { border-bottom: none; }
-.highlight-list li::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  flex-shrink: 0;
-  margin-top: 7px;
-}
-
-/* ─── PROFILES LINKS ─── */
-.profile-links { display: flex; flex-wrap: wrap; gap: 8px; }
-.profile-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 7px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  color: var(--ink);
-  text-decoration: none;
-  transition: background 0.15s, border-color 0.15s;
-}
-.profile-link:hover {
-  background: var(--gold-soft);
-  border-color: rgba(184,134,11,0.3);
-  text-decoration: none;
-  color: var(--gold);
-}
-
-/* ─── FOOTER ─── */
-.footer {
-  text-align: center;
-  padding: 24px 32px;
-  font-size: 12px;
-  color: var(--light);
-  border-top: 1px solid var(--line);
-  background: var(--panel);
-}
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hero { animation: fadeUp 0.5s ease-out; }
-.stats-strip { animation: fadeUp 0.5s 0.1s ease-out both; }
-.card { animation: fadeUp 0.5s 0.15s ease-out both; }
-
-@media (max-width: 600px) {
-  .topbar { padding: 12px 16px; }
-  .hero { padding: 36px 16px 32px; }
-  .main-wrap { padding: 24px 16px 36px; }
-  .card { padding: 18px; }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .stat-item:nth-child(2n) { border-right: none; }
-  .stat-item { border-bottom: 1px solid var(--line); }
-}
-</style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <span class="topbar-brand">Prof (Dr.) Dhawan Singh · Résumé</span>
-  <div class="topbar-right">
-    <button id="themeToggle" class="btn-toggle" type="button" aria-label="Toggle dark mode">
-      <span id="themeIcon">🌙</span>
-      <span id="themeLabel">Dark</span>
-    </button>
-    <a href="Dhawan_Singh_Full_Resume.pdf" target="_blank" class="btn-dl">
-      ↓ Download PDF
-    </a>
-  </div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
-    <div class="avatar-wrap">
-      <img src="dhawan.jpg" alt="Prof (Dr.) Dhawan Singh" class="avatar" loading="lazy">
-      <div class="avatar-ring"></div>
+  <div class="topbar">
+    <span class="topbar-brand">Prof (Dr.) Dhawan Singh · Résumé</span>
+    <div class="topbar-right">
+      <button id="themeToggle" class="btn-toggle" type="button" aria-label="Toggle dark mode">
+        <span id="themeIcon">🌙</span>
+        <span id="themeLabel">Dark</span>
+      </button>
+      <a href="Dhawan Singh_Full_Resume.pdf" target="_blank" class="btn-dl">
+        ↓ Download PDF
+      </a>
     </div>
+  </div>
 
-    <div class="hero-text">
-      <div class="hero-eyebrow">Professor · Electronics &amp; Communication Engineering</div>
-      <h1 class="hero-name">Prof (Dr.)<br>Dhawan Singh</h1>
-      <p class="hero-headline">Chandigarh University, Punjab, India · Ph.D. University of KwaZulu-Natal, South Africa</p>
-
-      <div class="hero-tags">
-        <span class="tag tag-gold">Metamaterial Antennas</span>
-        <span class="tag tag-gold">RCS Reduction</span>
-        <span class="tag tag-white">Embedded &amp; IoT</span>
-        <span class="tag tag-white">Cloud &amp; Automation</span>
-        <span class="tag tag-white">Perovskite Solar Cells</span>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="avatar-wrap">
+        <img src="dhawan.jpg" alt="Prof (Dr.) Dhawan Singh" class="avatar" loading="lazy">
+        <div class="avatar-ring"></div>
       </div>
 
-      <div class="hero-contact">
-        <a href="mailto:dhawan_deor@yahoo.co.in">dhawan_deor@yahoo.co.in</a>
-        <span>·</span>
-        <a href="mailto:dhawan4324@gmail.com">dhawan4324@gmail.com</a>
-        <span>·</span>
-        <span>+91-7018743983</span>
-      </div>
-    </div>
+      <div class="hero-text">
+        <div class="hero-eyebrow">Professor · Electronics &amp; Communication Engineering</div>
+        <h1 class="hero-name">Prof (Dr.)<br>Dhawan Singh</h1>
+        <p class="hero-headline">Chandigarh University, Punjab, India · Ph.D. University of KwaZulu-Natal, South Africa</p>
 
-    <div class="hero-qr-area">
-      <div id="qr"></div>
-      <span class="qr-label">SCAN TO OPEN</span>
-    </div>
-  </div>
-</div>
+        <div class="hero-tags">
+          <span class="tag tag-gold">Metamaterial Antennas</span>
+          <span class="tag tag-gold">RCS Reduction</span>
+          <span class="tag tag-white">Embedded &amp; IoT</span>
+          <span class="tag tag-white">Cloud &amp; Automation</span>
+          <span class="tag tag-white">Perovskite Solar Cells</span>
+        </div>
 
-<!-- STATS STRIP -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <span class="stat-num">18+</span>
-      <span class="stat-label">Years Experience</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">48+</span>
-      <span class="stat-label">Publications</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">25+</span>
-      <span class="stat-label">Patents &amp; Designs</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">1000</span>
-      <span class="stat-label">Scholar Citations</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">h-14</span>
-      <span class="stat-label">h-Index (Scholar)</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">540</span>
-      <span class="stat-label">Scopus Citations</span>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="main-wrap">
-  <div class="layout">
-
-    <main>
-
-      <!-- PROFILE -->
-      <div class="card">
-        <div class="card-title">Profile</div>
-        <div class="profile-text">
-          <p>Research-driven professor with 18+ years across academia and industry (ECE/EE/CSE). Ph.D. in Electronic Engineering (University of KwaZulu-Natal, South Africa) with specialization in metamaterial absorbers and RCS reduction.</p>
-          <p>Hands-on experience in IoT and embedded prototypes, perovskite solar cell simulations, and cloud automation. Active in curriculum design, workshops, and mentoring student innovation teams (including Smart India Hackathon 2022 Hardware finale).</p>
+        <div class="hero-contact">
+          <a href="mailto:dhawan_deor@yahoo.co.in">dhawan_deor@yahoo.co.in</a>
+          <span>·</span>
+          <a href="mailto:dhawan4324@gmail.com">dhawan4324@gmail.com</a>
+          <span>·</span>
+          <span>+91-7018743983</span>
         </div>
       </div>
 
-      <!-- EXPERIENCE -->
-      <div class="card">
-        <div class="card-title">Experience</div>
+      <div class="hero-qr-area">
+        <div id="qr"></div>
+        <span class="qr-label">SCAN TO OPEN</span>
+      </div>
+    </div>
+  </div>
 
-        <div class="exp-item">
-          <div class="exp-row">
-            <div>
-              <div class="exp-role">Professor (ECE)</div>
-              <div class="exp-org">Chandigarh University</div>
-            </div>
-            <span class="exp-date">2023 — Present</span>
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num">18+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">48+</span>
+        <span class="stat-label">Publications</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">25+</span>
+        <span class="stat-label">Patents &amp; Designs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">1000</span>
+        <span class="stat-label">Scholar Citations</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">h-14</span>
+        <span class="stat-label">h-Index (Scholar)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">540</span>
+        <span class="stat-label">Scopus Citations</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-wrap">
+    <div class="layout">
+
+      <main>
+        <div class="card">
+          <div class="card-title">Profile</div>
+          <div class="profile-text">
+            <p>Research-driven professor with 18+ years across academia and industry (ECE/EE/CSE). Ph.D. in Electronic Engineering (University of KwaZulu-Natal, South Africa) with specialization in metamaterial absorbers and RCS reduction.</p>
+            <p>Hands-on experience in IoT and embedded prototypes, perovskite solar cell simulations, and cloud automation. Active in curriculum design, workshops, and mentoring student innovation teams (including Smart India Hackathon 2022 Hardware finale).</p>
           </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Experience</div>
+
+          <div class="exp-item">
+            <div class="exp-row">
+              <div>
+                <div class="exp-role">Professor (ECE)</div>
+                <div class="exp-org">Chandigarh University</div>
+              </div>
+              <span class="exp-date">2023 — Present</span>
+            </div>
+            <ul class="exp-list">
+              <li>Lead teaching &amp; research in antennas, embedded/IoT, and cloud security.</li>
+              <li>Supervise Ph.D. &amp; M.Tech scholars; drive publications and patents.</li>
+              <li>Organise workshops and mentor student teams for national-level events.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-row">
+              <div>
+                <div class="exp-role">Associate Professor</div>
+                <div class="exp-org">Chitkara University</div>
+              </div>
+              <span class="exp-date">2019 — 2023</span>
+            </div>
+            <ul class="exp-list">
+              <li>Set up research labs in antenna design, IoT and VLSI.</li>
+              <li>Editorial Board Member (AJSET); reviewer for Elsevier/Springer titles.</li>
+              <li>Convened 15-day Electrical Engineering research workshop (2021).</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-row">
+              <div>
+                <div class="exp-role">Ph.D. Researcher / Demonstrator</div>
+                <div class="exp-org">University of KwaZulu-Natal, South Africa</div>
+              </div>
+              <span class="exp-date">2016 — 2019</span>
+            </div>
+            <ul class="exp-list">
+              <li>Developed shorted-stub metamaterial absorbers for patch antenna RCS reduction.</li>
+              <li>Delivered undergraduate labs in RF and microwave engineering.</li>
+              <li>Recognised among "Top 11 Published Student Researchers" (2018).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Selected Research &amp; IP</div>
           <ul class="exp-list">
-            <li>Lead teaching &amp; research in antennas, embedded/IoT, and cloud security.</li>
-            <li>Supervise Ph.D. &amp; M.Tech scholars; drive publications and patents.</li>
-            <li>Organise workshops and mentor student teams for national-level events.</li>
+            <li><em>Indian Journal of Physics</em> (2025): Lead-free perovskite solar cell simulations (CsSnCl<sub>3</sub> based).</li>
+            <li><em>CRC Book Chapter</em> (2025): Scheduling in multi-cloud architecture using optimisation techniques.</li>
+            <li><em>PIER B / IJMOT</em> (2023): Multiband rectenna and compact dual-band antenna designs.</li>
+            <li>Smart Access-Controlled Helmet; IoT Gas Cylinder Stand; AI Intercom; Solar Lawn Mower — recent granted IP.</li>
           </ul>
         </div>
 
-        <div class="exp-item">
-          <div class="exp-row">
-            <div>
-              <div class="exp-role">Associate Professor</div>
-              <div class="exp-org">Chitkara University</div>
+        <div class="card">
+          <div class="card-title">Publications <span class="card-subtitle">(auto-updated from ORCID)</span></div>
+          <div id="pub-meta">Loading publications from ORCID…</div>
+
+          <div class="pub-scroll-wrap">
+            <div id="pub-scroll-track" class="pub-scroll-track">
+              <ol id="pub-list"></ol>
             </div>
-            <span class="exp-date">2019 — 2023</span>
           </div>
-          <ul class="exp-list">
-            <li>Set up research labs in antenna design, IoT and VLSI.</li>
-            <li>Editorial Board Member (AJSET); reviewer for Elsevier/Springer titles.</li>
-            <li>Convened 15-day Electrical Engineering research workshop (2021).</li>
+        </div>
+      </main>
+
+      <aside>
+        <div class="card">
+          <div class="card-title">Academic Profiles</div>
+          <div class="profile-links">
+            <a href="https://scholar.google.co.in/citations?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener" class="profile-link">Google Scholar</a>
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener" class="profile-link">Scopus</a>
+            <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener" class="profile-link">ResearchGate</a>
+            <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener" class="profile-link">LinkedIn</a>
+            <a href="https://orcid.org/0000-0003-4868-5806" target="_blank" rel="noopener" class="profile-link">ORCID</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Technical Skills</div>
+          <div class="chips">
+            <span class="chip chip-accent">CST · HFSS · ADS</span>
+            <span class="chip chip-accent">Antenna Magus</span>
+            <span class="chip">Metamaterial / RCS / FSS</span>
+            <span class="chip">EBG / MIMO Antennas</span>
+            <span class="chip">Arduino · STM32</span>
+            <span class="chip">Raspberry Pi</span>
+            <span class="chip">C/C++ · Embedded C</span>
+            <span class="chip">VHDL · MATLAB</span>
+            <span class="chip">AWS · Terraform</span>
+            <span class="chip">Jenkins · CI/CD</span>
+            <span class="chip">OrCAD · Proteus</span>
+            <span class="chip">Altium · Multisim</span>
+            <span class="chip">Perovskite Solar Cells</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Education</div>
+
+          <div class="edu-item">
+            <div class="edu-degree">Ph.D., Electronic Engineering</div>
+            <div class="edu-school">University of KwaZulu-Natal, South Africa</div>
+            <div class="edu-school edu-note">RCS reduction using shorted-stub metamaterial absorbers</div>
+            <span class="edu-year">2019</span>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-degree">M.Tech (ECE)</div>
+            <div class="edu-school">Eternal University · 75%</div>
+            <span class="edu-year">2013</span>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-degree">M.Sc. (Electronics)</div>
+            <div class="edu-school">Jiwaji University · 65%</div>
+            <span class="edu-year">2006</span>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-degree">UGC-NET (Electronic Science)</div>
+            <div class="edu-school">Qualified</div>
+            <span class="edu-year">2014</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Highlights</div>
+          <ul class="highlight-list">
+            <li>48+ publications; 25+ patents, designs &amp; utility models</li>
+            <li>Google Scholar: ~1000 citations · h-14 · i10-22</li>
+            <li>Scopus: ~540 citations · h-10</li>
+            <li>Mentor — SIH 2022 Hardware (National Finale)</li>
+            <li>Microsoft Azure AI-900 Certified</li>
+            <li>Member: IEEE · IAENG · RSRI</li>
+            <li>Top 11 Published Student Researchers, UKZN (2018)</li>
           </ul>
         </div>
 
-        <div class="exp-item">
-          <div class="exp-row">
-            <div>
-              <div class="exp-role">Ph.D. Researcher / Demonstrator</div>
-              <div class="exp-org">University of KwaZulu-Natal, South Africa</div>
-            </div>
-            <span class="exp-date">2016 — 2019</span>
-          </div>
-          <ul class="exp-list">
-            <li>Developed shorted-stub metamaterial absorbers for patch antenna RCS reduction.</li>
-            <li>Delivered undergraduate labs in RF and microwave engineering.</li>
-            <li>Recognised among "Top 11 Published Student Researchers" (2018).</li>
-          </ul>
+        <div class="card">
+          <div class="card-title">Peer Review Activity <span class="card-subtitle">(auto-updated from ORCID)</span></div>
+          <div id="peer-meta">Loading peer review activity…</div>
+          <div id="peer-review-list"></div>
         </div>
-      </div>
-
-      <!-- SELECTED RESEARCH -->
-      <div class="card">
-        <div class="card-title">Selected Research &amp; IP</div>
-        <ul class="exp-list">
-          <li><em>Indian Journal of Physics</em> (2025): Lead-free perovskite solar cell simulations (CsSnCl<sub>3</sub> based).</li>
-          <li><em>CRC Book Chapter</em> (2025): Scheduling in multi-cloud architecture using optimisation techniques.</li>
-          <li><em>PIER B / IJMOT</em> (2023): Multiband rectenna and compact dual-band antenna designs.</li>
-          <li>Smart Access-Controlled Helmet; IoT Gas Cylinder Stand; AI Intercom; Solar Lawn Mower — recent granted IP.</li>
-        </ul>
-      </div>
-
-      <!-- PUBLICATIONS -->
-      <div class="card">
-        <div class="card-title">Publications <span style="font-size:9px;color:var(--muted);letter-spacing:0.1em;font-weight:400;text-transform:none;margin-left:4px">(auto-updated from ORCID)</span></div>
-        <div id="pub-meta">Loading publications from ORCID…</div>
-        <ol id="pub-list" style="list-style:none;padding:0;"></ol>
-      </div>
-
-    </main>
-
-    <aside>
-
-      <!-- ACADEMIC PROFILES -->
-      <div class="card">
-        <div class="card-title">Academic Profiles</div>
-        <div class="profile-links">
-          <a href="https://scholar.google.co.in/citations?user=y80jQngAAAAJ&hl=en" target="_blank" rel="noopener" class="profile-link">Google Scholar</a>
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=57195940099" target="_blank" rel="noopener" class="profile-link">Scopus</a>
-          <a href="https://www.researchgate.net/profile/Dhawan_Singh" target="_blank" rel="noopener" class="profile-link">ResearchGate</a>
-          <a href="https://www.linkedin.com/in/drdhawansingh" target="_blank" rel="noopener" class="profile-link">LinkedIn</a>
-          <a href="https://orcid.org/0000-0003-4868-5806" target="_blank" rel="noopener" class="profile-link">ORCID</a>
-        </div>
-      </div>
-
-      <!-- SKILLS -->
-      <div class="card">
-        <div class="card-title">Technical Skills</div>
-        <div class="chips">
-          <span class="chip chip-accent">CST · HFSS · ADS</span>
-          <span class="chip chip-accent">Antenna Magus</span>
-          <span class="chip">Metamaterial / RCS / FSS</span>
-          <span class="chip">EBG / MIMO Antennas</span>
-          <span class="chip">Arduino · STM32</span>
-          <span class="chip">Raspberry Pi</span>
-          <span class="chip">C/C++ · Embedded C</span>
-          <span class="chip">VHDL · MATLAB</span>
-          <span class="chip">AWS · Terraform</span>
-          <span class="chip">Jenkins · CI/CD</span>
-          <span class="chip">OrCAD · Proteus</span>
-          <span class="chip">Altium · Multisim</span>
-          <span class="chip">Perovskite Solar Cells</span>
-        </div>
-      </div>
-
-      <!-- EDUCATION -->
-      <div class="card">
-        <div class="card-title">Education</div>
-
-        <div class="edu-item">
-          <div class="edu-degree">Ph.D., Electronic Engineering</div>
-          <div class="edu-school">University of KwaZulu-Natal, South Africa</div>
-          <div class="edu-school" style="font-size:12px;margin-top:3px;color:var(--muted)">RCS reduction using shorted-stub metamaterial absorbers</div>
-          <span class="edu-year">2019</span>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-degree">M.Tech (ECE)</div>
-          <div class="edu-school">Eternal University · 75%</div>
-          <span class="edu-year">2013</span>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-degree">M.Sc. (Electronics)</div>
-          <div class="edu-school">Jiwaji University · 65%</div>
-          <span class="edu-year">2006</span>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-degree">UGC-NET (Electronic Science)</div>
-          <div class="edu-school">Qualified</div>
-          <span class="edu-year">2014</span>
-        </div>
-      </div>
-
-      <!-- HIGHLIGHTS -->
-      <div class="card">
-        <div class="card-title">Highlights</div>
-        <ul class="highlight-list">
-          <li>48+ publications; 25+ patents, designs &amp; utility models</li>
-          <li>Google Scholar: ~1411 citations · h-17 · i10-36</li>
-          <li>Scopus: ~595 citations · h-11</li>
-          <li>Mentor — SIH 2022 Hardware (National Finale)</li>
-          <li>Microsoft Azure AI-900 Certified</li>
-          <li>Member: IEEE · IAENG · RSRI</li>
-          <li>Top 11 Published Student Researchers, UKZN (2018)</li>
-        </ul>
-      </div>
-
-      <!-- PEER REVIEW -->
-      <div class="card">
-        <div class="card-title">Peer Review Activity <span style="font-size:9px;color:var(--muted);letter-spacing:0.1em;font-weight:400;text-transform:none;margin-left:4px">(auto-updated from ORCID)</span></div>
-        <div id="peer-meta">Loading peer review activity…</div>
-        <div id="peer-review-list"></div>
-      </div>
-
-    </aside>
+      </aside>
+    </div>
   </div>
-</div>
 
-<div class="footer">
-  Print or save as PDF using your browser's <strong>Print</strong> menu &nbsp;·&nbsp; Prof (Dr.) Dhawan Singh &nbsp;·&nbsp; Chandigarh University
-</div>
+  <div class="footer">
+    Print or save as PDF using your browser's <strong>Print</strong> menu &nbsp;·&nbsp; Prof (Dr.) Dhawan Singh &nbsp;·&nbsp; Chandigarh University
+  </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="assets/publications.js" onerror="void 0"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const ORCID_ID = "0000-0003-4868-5806";
-  const resumeUrl = "Dhawan_Singh_Full_Resume.pdf";
-
-  // QR Code
-  try {
-    new QRCode(document.getElementById("qr"), {
-      text: window.location.href || resumeUrl,
-      width: 100,
-      height: 100,
-      correctLevel: QRCode.CorrectLevel.H
-    });
-  } catch(e) {}
-
-  // Theme toggle
-  const body = document.body;
-  const toggle = document.getElementById('themeToggle');
-  const icon = document.getElementById('themeIcon');
-  const label = document.getElementById('themeLabel');
-
-  function setTheme(t) {
-    body.setAttribute('data-theme', t);
-    icon.textContent = t === 'dark' ? '☀️' : '🌙';
-    label.textContent = t === 'dark' ? 'Light' : 'Dark';
-    try { localStorage.setItem('drds-theme', t); } catch(e) {}
-  }
-
-  try {
-    const saved = localStorage.getItem('drds-theme');
-    if (saved === 'dark' || saved === 'light') setTheme(saved);
-  } catch(e) {}
-
-  toggle.addEventListener('click', function () {
-    setTheme(body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-  });
-
-  // Load ORCID Publications
-  async function loadPublications() {
-    const meta = document.getElementById("pub-meta");
-    const list = document.getElementById("pub-list");
-
-    try {
-      const res = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/works`, {
-        headers: { "Accept": "application/json" }
-      });
-      if (!res.ok) throw new Error(res.status);
-
-      const data = await res.json();
-      const works = data.group || [];
-
-      if (!works.length) {
-        meta.textContent = "No public works found on ORCID.";
-        return;
-      }
-
-      meta.textContent = `${works.length} works found on ORCID · Sorted by recent`;
-
-      works.slice(0, 20).forEach(function(g, i) {
-        const summary = (g['work-summary'] && g['work-summary'][0]) || {};
-        const title = (summary.title && summary.title.title && summary.title.title.value) || 'Untitled';
-        const year = (summary['publication-date'] && summary['publication-date'].year && summary['publication-date'].year.value) || '';
-        const journal = (summary['journal-title'] && summary['journal-title'].value) || '';
-
-        const li = document.createElement('li');
-        li.className = 'pub-item';
-        li.innerHTML =
-          '<span class="pub-num">' + (i + 1) + '</span>' +
-          '<strong>' + title + '</strong>' +
-          (journal ? ' <span style="color:var(--muted)">· ' + journal + '</span>' : '') +
-          (year ? ' <span style="color:var(--light);font-size:12px"> · ' + year + '</span>' : '');
-
-        list.appendChild(li);
-      });
-    } catch(e) {
-      meta.textContent = "Unable to load from ORCID. Check your profile visibility settings.";
-    }
-  }
-
-  // Load ORCID Peer Reviews
-  async function loadPeerReviews() {
-    const meta = document.getElementById("peer-meta");
-    const list = document.getElementById("peer-review-list");
-
-    try {
-      const res = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/peer-reviews`, {
-        headers: { "Accept": "application/json" }
-      });
-      if (!res.ok) throw new Error(res.status);
-
-      const data = await res.json();
-      const groups = data.group || [];
-
-      if (!groups.length) {
-        meta.textContent = "No public peer review activity found on ORCID.";
-        return;
-      }
-
-      meta.textContent = groups.length + ' peer review group(s) on ORCID';
-
-      groups.forEach(function(group) {
-        const prGroups = group['peer-review-group'] || [];
-        const summaries = (prGroups[0] && prGroups[0]['peer-review-summary']) ? prGroups[0]['peer-review-summary'] : [];
-        const reviewCount = summaries.length;
-
-        let journalName = 'Peer Review Activity';
-        if (summaries.length > 0) {
-          const first = summaries[0];
-          if (first['convening-organization'] && first['convening-organization']['name']) {
-            journalName = first['convening-organization']['name'];
-          } else if (
-            first['review-group-id'] &&
-            first['review-group-id']['external-identifier'] &&
-            first['review-group-id']['external-identifier']['value']
-          ) {
-            journalName = first['review-group-id']['external-identifier']['value'];
-          }
-        }
-
-        const card = document.createElement('div');
-        card.className = 'peer-card';
-        card.innerHTML =
-          '<div class="peer-title">' + journalName + '</div>' +
-          '<div class="peer-sub">Review activity from your public ORCID record</div>' +
-          '<span class="peer-badge">' + reviewCount + ' review(s)</span>';
-
-        list.appendChild(card);
-      });
-    } catch(e) {
-      meta.textContent = "Unable to load peer review activity. Check ORCID visibility settings.";
-    }
-  }
-
-  loadPublications();
-  loadPeerReviews();
-});
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
