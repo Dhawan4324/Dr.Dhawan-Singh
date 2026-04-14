@@ -88,23 +88,36 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .topbar-right { display: flex; align-items: center; gap: 10px; }
 
 .btn-toggle {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 11px; font-weight: 500;
-  background: var(--bg); border: 1px solid var(--line);
-  color: var(--muted); border-radius: 999px;
-  padding: 5px 12px; cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 5px 12px;
+  cursor: pointer;
   transition: background 0.2s;
 }
 .btn-toggle:hover { background: var(--line); }
 
 .btn-dl {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 11px; font-weight: 600;
-  background: var(--navy); color: #fff;
-  border: none; border-radius: 999px;
-  padding: 6px 16px; cursor: pointer; text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 16px;
+  cursor: pointer;
+  text-decoration: none;
   letter-spacing: 0.04em;
   transition: opacity 0.2s;
 }
@@ -197,14 +210,22 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
 .hero-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
 
 .tag {
-  font-size: 11px; font-weight: 500;
-  padding: 4px 11px; border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 11px;
+  border-radius: 999px;
   letter-spacing: 0.03em;
 }
 .tag-gold { background: rgba(184,134,11,0.22); color: var(--gold-mid); border: 1px solid rgba(184,134,11,0.3); }
 .tag-white { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.15); }
 
-.hero-contact { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: rgba(255,255,255,0.55); }
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+}
 .hero-contact a { color: rgba(255,255,255,0.75); text-underline-offset: 3px; }
 .hero-contact a:hover { color: var(--gold-mid); }
 
@@ -231,7 +252,8 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
   padding: 0;
 }
 .stats-inner {
-  max-width: 1080px; margin: 0 auto;
+  max-width: 1080px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
@@ -249,13 +271,30 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
   line-height: 1;
   display: block;
 }
-.stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; display: block; }
+.stat-label {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
 
 /* ─── MAIN LAYOUT ─── */
-.main-wrap { max-width: 1080px; margin: 0 auto; padding: 36px 32px 48px; }
+.main-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 36px 32px 48px;
+}
 
-.layout { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: 28px; }
-@media (max-width: 840px) { .layout { grid-template-columns: 1fr; } }
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(320px, 1fr);
+  gap: 28px;
+}
+@media (max-width: 840px) {
+  .layout { grid-template-columns: 1fr; }
+}
 
 /* ─── SECTION CARDS ─── */
 .card {
@@ -317,7 +356,8 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
 }
 .exp-list {
   list-style: none;
-  padding: 0; margin: 0;
+  padding: 0;
+  margin: 0;
   font-size: 13.5px;
   color: var(--muted);
 }
@@ -331,7 +371,7 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
   background: var(--gold);
 }
 
-/* ─── PUBLICATIONS ─── */
+/* ─── PUBLICATIONS + PEER META ─── */
 #pub-meta, #peer-meta {
   font-size: 12px;
   color: var(--muted);
@@ -344,7 +384,8 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
 
 #pub-list {
   list-style: none;
-  padding: 0; margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .pub-item {
@@ -355,6 +396,7 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
   color: var(--ink);
 }
 .pub-item:last-child { border-bottom: none; }
+
 .pub-num {
   display: inline-block;
   width: 22px;
@@ -373,19 +415,37 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
 }
 
 /* ─── PEER REVIEW ─── */
+#peer-review-list {
+  margin: 0;
+  padding: 0;
+}
+
 .peer-card {
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 12px 14px;
   margin-bottom: 10px;
   background: var(--bg);
 }
-.peer-title { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 4px; }
-.peer-sub { font-size: 12px; color: var(--muted); }
+
+.peer-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.peer-sub {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
 .peer-badge {
   display: inline-block;
   margin-top: 8px;
-  font-size: 11px; font-weight: 500;
+  font-size: 11px;
+  font-weight: 500;
   background: var(--accent-soft);
   color: var(--accent);
   border: 1px solid rgba(200,75,15,0.2);
@@ -396,8 +456,10 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
 /* ─── SIDEBAR CHIPS ─── */
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip {
-  font-size: 12px; font-weight: 400;
-  padding: 6px 12px; border-radius: 999px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 6px 12px;
+  border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--bg);
   color: var(--ink);
@@ -445,7 +507,8 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
 .highlight-list li::before {
   content: '';
   display: block;
-  width: 6px; height: 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--gold);
   flex-shrink: 0;
@@ -455,9 +518,13 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
 /* ─── PROFILES LINKS ─── */
 .profile-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .profile-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 12px; font-weight: 500;
-  padding: 7px 14px; border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--panel);
   color: var(--ink);
@@ -507,7 +574,7 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
 <div class="topbar">
   <span class="topbar-brand">Prof (Dr.) Dhawan Singh · Résumé</span>
   <div class="topbar-right">
-    <button id="themeToggle" class="btn-toggle" type="button">
+    <button id="themeToggle" class="btn-toggle" type="button" aria-label="Toggle dark mode">
       <span id="themeIcon">🌙</span>
       <span id="themeLabel">Dark</span>
     </button>
@@ -667,13 +734,6 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
         <ol id="pub-list" style="list-style:none;padding:0;"></ol>
       </div>
 
-      <!-- PEER REVIEW -->
-      <div class="card">
-        <div class="card-title">Peer Review Activity <span style="font-size:9px;color:var(--muted);letter-spacing:0.1em;font-weight:400;text-transform:none;margin-left:4px">(auto-updated from ORCID)</span></div>
-        <div id="peer-meta">Loading peer review activity…</div>
-        <div id="peer-review-list"></div>
-      </div>
-
     </main>
 
     <aside>
@@ -754,6 +814,13 @@ body[data-theme="dark"] .btn-dl { background: var(--gold); color: #0b0a09; }
         </ul>
       </div>
 
+      <!-- PEER REVIEW -->
+      <div class="card">
+        <div class="card-title">Peer Review Activity <span style="font-size:9px;color:var(--muted);letter-spacing:0.1em;font-weight:400;text-transform:none;margin-left:4px">(auto-updated from ORCID)</span></div>
+        <div id="peer-meta">Loading peer review activity…</div>
+        <div id="peer-review-list"></div>
+      </div>
+
     </aside>
   </div>
 </div>
@@ -774,7 +841,8 @@ document.addEventListener('DOMContentLoaded', function () {
   try {
     new QRCode(document.getElementById("qr"), {
       text: window.location.href || resumeUrl,
-      width: 100, height: 100,
+      width: 100,
+      height: 100,
       correctLevel: QRCode.CorrectLevel.H
     });
   } catch(e) {}
@@ -805,29 +873,37 @@ document.addEventListener('DOMContentLoaded', function () {
   async function loadPublications() {
     const meta = document.getElementById("pub-meta");
     const list = document.getElementById("pub-list");
+
     try {
       const res = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/works`, {
         headers: { "Accept": "application/json" }
       });
       if (!res.ok) throw new Error(res.status);
+
       const data = await res.json();
-      const works = (data.group || []);
+      const works = data.group || [];
+
       if (!works.length) {
         meta.textContent = "No public works found on ORCID.";
         return;
       }
+
       meta.textContent = `${works.length} works found on ORCID · Sorted by recent`;
+
       works.slice(0, 20).forEach(function(g, i) {
         const summary = (g['work-summary'] && g['work-summary'][0]) || {};
         const title = (summary.title && summary.title.title && summary.title.title.value) || 'Untitled';
         const year = (summary['publication-date'] && summary['publication-date'].year && summary['publication-date'].year.value) || '';
         const journal = (summary['journal-title'] && summary['journal-title'].value) || '';
+
         const li = document.createElement('li');
         li.className = 'pub-item';
-        li.innerHTML = '<span class="pub-num">' + (i+1) + '</span>' +
+        li.innerHTML =
+          '<span class="pub-num">' + (i + 1) + '</span>' +
           '<strong>' + title + '</strong>' +
           (journal ? ' <span style="color:var(--muted)">· ' + journal + '</span>' : '') +
           (year ? ' <span style="color:var(--light);font-size:12px"> · ' + year + '</span>' : '');
+
         list.appendChild(li);
       });
     } catch(e) {
@@ -839,36 +915,49 @@ document.addEventListener('DOMContentLoaded', function () {
   async function loadPeerReviews() {
     const meta = document.getElementById("peer-meta");
     const list = document.getElementById("peer-review-list");
+
     try {
       const res = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/peer-reviews`, {
         headers: { "Accept": "application/json" }
       });
       if (!res.ok) throw new Error(res.status);
+
       const data = await res.json();
       const groups = data.group || [];
+
       if (!groups.length) {
         meta.textContent = "No public peer review activity found on ORCID.";
         return;
       }
+
       meta.textContent = groups.length + ' peer review group(s) on ORCID';
+
       groups.forEach(function(group) {
         const prGroups = group['peer-review-group'] || [];
         const summaries = (prGroups[0] && prGroups[0]['peer-review-summary']) ? prGroups[0]['peer-review-summary'] : [];
         const reviewCount = summaries.length;
+
         let journalName = 'Peer Review Activity';
         if (summaries.length > 0) {
           const first = summaries[0];
           if (first['convening-organization'] && first['convening-organization']['name']) {
             journalName = first['convening-organization']['name'];
-          } else if (first['review-group-id'] && first['review-group-id']['external-identifier'] && first['review-group-id']['external-identifier']['value']) {
+          } else if (
+            first['review-group-id'] &&
+            first['review-group-id']['external-identifier'] &&
+            first['review-group-id']['external-identifier']['value']
+          ) {
             journalName = first['review-group-id']['external-identifier']['value'];
           }
         }
+
         const card = document.createElement('div');
         card.className = 'peer-card';
-        card.innerHTML = '<div class="peer-title">' + journalName + '</div>' +
+        card.innerHTML =
+          '<div class="peer-title">' + journalName + '</div>' +
           '<div class="peer-sub">Review activity from your public ORCID record</div>' +
           '<span class="peer-badge">' + reviewCount + ' review(s)</span>';
+
         list.appendChild(card);
       });
     } catch(e) {
