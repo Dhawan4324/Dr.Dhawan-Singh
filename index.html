@@ -9,6 +9,7 @@
 <meta property="og:description" content="Professor (ECE) · Metamaterial Antennas | Embedded & IoT | Cloud & Automation | Perovskite Solar Cells">
 <meta property="og:type" content="website">
 <meta name="robots" content="index,follow">
+<meta rel="canonical" href="https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -233,7 +234,7 @@
 
   <div class="top-bar">
     <div class="brand-mini">DR. DHAWAN SINGH · RÉSUMÉ</div>
-    <button id="themeToggle" class="theme-toggle" type="button">
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
       <span class="icon" id="themeIcon">🌙</span>
       <span id="themeLabel">Dark mode</span>
     </button>
@@ -417,11 +418,10 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="assets/publications.js"></script>
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const resumeUrl = "Dhawan_Singh_Full_Resume.pdf";
+    const siteUrl = "https://dhawan4324.github.io/Resume-Dr.Dhawan-Singh/";
+    const resumeUrl = `${siteUrl}Dhawan_Singh_Full_Resume.pdf`;
     const ORCID_ID = "0000-0003-4868-5806";
 
     new QRCode(document.getElementById("qr"), {
@@ -448,42 +448,120 @@
         icon.textContent = '🌙';
         label.textContent = 'Dark mode';
       }
-      try{ localStorage.setItem('drds-theme', theme); }catch(e){}
+      try { localStorage.setItem('drds-theme', theme); } catch(e) {}
     }
 
-    try{
+    try {
       const saved = localStorage.getItem('drds-theme');
-      if(saved === 'dark' || saved === 'light'){ setTheme(saved); }
-    }catch(e){}
+      if(saved === 'dark' || saved === 'light') setTheme(saved);
+    } catch(e) {}
 
     toggle.addEventListener('click', function(){
       const current = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       setTheme(current);
     });
 
-    async function loadPeerReviews() {
-      const peerMeta = document.getElementById("peer-meta");
-      const peerList = document.getElementById("peer-review-list");
+    function safeText(value, fallback = '') {
+      return typeof value === 'string' && value.trim() ? value.trim() : fallback;
+    }
 
-      peerMeta.textContent = "Loading peer review activity…";
-      peerList.innerHTML = "";
+    function extractYear(dateObj) {
+      if (!dateObj) return '';
+      return dateObj.year?.value || '';
+    }
+
+    function extractWorkUrl(work) {
+      const externalIds = work['external-ids']?.['external-id'] || [];
+      const doi = externalIds.find(item => (item['external-id-type'] || '').toLowerCase() === 'doi');
+      if (doi?.['external-id-value']) {
+        return `https://doi.org/${doi['external-id-value']}`;
+      }
+      return work.url?.value || '';
+    }
+
+    async function loadPublications() {
+      const pubMeta = document.getElementById('pub-meta');
+      const pubList = document.getElementById('pub-list');
+      pubMeta.textContent = 'Loading publications…';
+      pubList.innerHTML = '';
+
+      try {
+        const response = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/works`, {
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (!response.ok) throw new Error(`ORCID works request failed: ${response.status}`);
+
+        const data = await response.json();
+        const groups = Array.isArray(data.group) ? data.group : [];
+
+        const publications = groups.map(group => {
+          const summary = group['work-summary']?.[0] || {};
+          const title = safeText(summary.title?.title?.value, 'Untitled publication');
+          const journal = safeText(summary['journal-title']?.value, '');
+          const year = extractYear(summary['publication-date']);
+          const type = safeText(summary.type, '');
+          const url = extractWorkUrl(summary);
+          return { title, journal, year, type, url };
+        }).sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
+
+        if (!publications.length) {
+          pubMeta.textContent = 'No public works found on ORCID.';
+          pubList.innerHTML = '<li>Make your ORCID works public to display them here.</li>';
+          return;
+        }
+
+        pubMeta.textContent = `${publications.length} publication(s) loaded from your public ORCID record.`;
+
+        publications.slice(0, 12).forEach(pub => {
+          const li = document.createElement('li');
+          const parts = [];
+          if (pub.year) parts.push(pub.year);
+          if (pub.journal) parts.push(pub.journal);
+          if (pub.type) parts.push(pub.type.replace(/-/g, ' '));
+          const meta = parts.length ? ` — ${parts.join(' · ')}` : '';
+
+          if (pub.url) {
+            const a = document.createElement('a');
+            a.href = pub.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = pub.title;
+            li.appendChild(a);
+            li.appendChild(document.createTextNode(meta));
+          } else {
+            li.textContent = `${pub.title}${meta}`;
+          }
+
+          pubList.appendChild(li);
+        });
+      } catch (error) {
+        console.error('Failed to load ORCID publications:', error);
+        pubMeta.textContent = 'Unable to load publications.';
+        pubList.innerHTML = '<li>Please check ORCID visibility settings or try again later.</li>';
+      }
+    }
+
+    async function loadPeerReviews() {
+      const peerMeta = document.getElementById('peer-meta');
+      const peerList = document.getElementById('peer-review-list');
+      peerMeta.textContent = 'Loading peer review activity…';
+      peerList.innerHTML = '';
 
       try {
         const response = await fetch(`https://pub.orcid.org/v3.0/${ORCID_ID}/peer-reviews`, {
-          headers: {
-            "Accept": "application/json"
-          }
+          headers: { 'Accept': 'application/json' }
         });
 
         if (!response.ok) {
-          throw new Error(`ORCID request failed: ${response.status}`);
+          throw new Error(`ORCID peer review request failed: ${response.status}`);
         }
 
         const data = await response.json();
-        const groups = data.group || [];
+        const groups = Array.isArray(data.group) ? data.group : [];
 
         if (!groups.length) {
-          peerMeta.textContent = "No public peer review activity found.";
+          peerMeta.textContent = 'No public peer review activity found.';
           peerList.innerHTML = "<p style='color:var(--muted);margin:0'>Make sure your ORCID peer reviews are public.</p>";
           return;
         }
@@ -491,70 +569,50 @@
         peerMeta.textContent = `${groups.length} peer review group(s) found on ORCID.`;
 
         groups.forEach((group) => {
-          let journalName = "Peer review activity";
+          let journalName = 'Peer Review Activity';
           let reviewCount = 0;
 
-          const peerReviewGroups = group["peer-review-group"] || [];
-          const summaries =
-            peerReviewGroups.length > 0 && peerReviewGroups[0]["peer-review-summary"]
-              ? peerReviewGroups[0]["peer-review-summary"]
-              : [];
-
+          const peerReviewGroups = group['peer-review-group'] || [];
+          const summaries = peerReviewGroups[0]?.['peer-review-summary'] || [];
           reviewCount = summaries.length;
 
           if (summaries.length > 0) {
             const first = summaries[0];
-
-           if (
-  first["convening-organization"] &&
-  first["convening-organization"]["name"]
-) {
-  journalName = first["convening-organization"]["name"];
-} 
-else if (
-  first["review-group-id"] &&
-  first["review-group-id"]["external-identifier"] &&
-  first["review-group-id"]["external-identifier"]["value"]
-) {
-  journalName = first["review-group-id"]["external-identifier"]["value"];
-} 
-else {
-  journalName = "Peer Review Activity";
-}
-            ) {
-              journalName = first["convening-organization"]["name"];
+            if (first['convening-organization']?.name) {
+              journalName = first['convening-organization'].name;
+            } else if (first['review-group-id']?.['external-identifier']?.value) {
+              journalName = first['review-group-id']['external-identifier'].value;
             }
           }
 
-          const card = document.createElement("div");
-          card.className = "peer-card";
+          const card = document.createElement('div');
+          card.className = 'peer-card';
 
-          const title = document.createElement("p");
-          title.className = "peer-title";
+          const title = document.createElement('p');
+          title.className = 'peer-title';
           title.textContent = journalName;
 
-          const sub = document.createElement("p");
-          sub.className = "peer-sub";
-          sub.textContent = "Review activity imported from your public ORCID record";
+          const sub = document.createElement('p');
+          sub.className = 'peer-sub';
+          sub.textContent = 'Review activity imported from your public ORCID record';
 
-          const count = document.createElement("span");
-          count.className = "peer-count";
+          const count = document.createElement('span');
+          count.className = 'peer-count';
           count.textContent = `${reviewCount} review(s)`;
 
           card.appendChild(title);
           card.appendChild(sub);
           card.appendChild(count);
-
           peerList.appendChild(card);
         });
-
       } catch (error) {
-        console.error("Failed to load ORCID peer review activity:", error);
-        peerMeta.textContent = "Unable to load peer review activity.";
+        console.error('Failed to load ORCID peer review activity:', error);
+        peerMeta.textContent = 'Unable to load peer review activity.';
         peerList.innerHTML = "<p style='color:var(--muted);margin:0'>Please check your ORCID visibility settings.</p>";
       }
     }
 
+    loadPublications();
     loadPeerReviews();
   });
 </script>
