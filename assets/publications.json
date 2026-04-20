@@ -1,7 +1,7 @@
 {
   "orcid": "0000-0003-4868-5806",
-  "generated_utc": "2026-04-19T05:13:54.682132+00:00",
-  "count": 52,
+  "generated_utc": "2026-04-20T05:24:11.025967+00:00",
+  "count": 53,
   "publications": [
     {
       "title": "SMART INCLUSIVE VIDEO INTERCOM SYSTEM WITH AI-BASED FACIAL, VOICE AND SIGN RECOGNITION",
@@ -185,6 +185,14 @@
       "type": "book-chapter",
       "doi": "10.1201/9781003367161-8",
       "url": "https://doi.org/10.1201/9781003367161-8",
+      "orcid_put_code": 212155671
+    },
+    {
+      "title": "A Systematic Review on Solar Cells",
+      "year": 2023,
+      "type": "book-chapter",
+      "doi": "10.1201/9781003367161-8",
+      "url": "https://doi.org/10.1201/9781003367161-8",
       "orcid_put_code": 200453987
     },
     {
@@ -337,7 +345,7 @@
       "type": "journal-article",
       "doi": "10.1007/s11277-018-6012-y",
       "url": "https://doi.org/10.1007/s11277-018-6012-y",
-      "orcid_put_code": 106938766
+      "orcid_put_code": 212155670
     },
     {
       "title": "RCS reduction of patch array using shorted stubs metamaterial absorber",
@@ -369,7 +377,7 @@
       "type": "journal-article",
       "doi": "10.1016/j.aeue.2017.08.034",
       "url": "https://doi.org/10.1016/j.aeue.2017.08.034",
-      "orcid_put_code": 43756454
+      "orcid_put_code": 212155668
     },
     {
       "title": "Designing of smart drip irrigation system for remote hilly areas",
@@ -393,7 +401,7 @@
       "type": "journal-article",
       "doi": "10.1016/j.aeue.2018.03.039",
       "url": "https://doi.org/10.1016/j.aeue.2018.03.039",
-      "orcid_put_code": 43756455
+      "orcid_put_code": 212155669
     },
     {
       "title": "Triple band regular decagon shaped metamaterial absorber for X-band applications",
