@@ -1,7 +1,7 @@
 {
   "orcid": "0000-0003-4868-5806",
-  "generated_utc": "2026-06-26T06:33:20.414736+00:00",
-  "count": 53,
+  "generated_utc": "2026-06-27T06:06:28.079937+00:00",
+  "count": 58,
   "publications": [
     {
       "title": "SMART INCLUSIVE VIDEO INTERCOM SYSTEM WITH AI-BASED FACIAL, VOICE AND SIGN RECOGNITION",
@@ -10,6 +10,14 @@
       "doi": "",
       "url": "",
       "orcid_put_code": 206329644
+    },
+    {
+      "title": "Cloud-based machine learning approach for performance prediction of HTL-free CsSnCl<sub>3</sub> perovskite solar cells",
+      "year": 2026,
+      "type": "journal-article",
+      "doi": "10.1007/S10854-026-17206-Y",
+      "url": "https://doi.org/10.1007/S10854-026-17206-Y",
+      "orcid_put_code": 218833240
     },
     {
       "title": "Revolutionizing Software Deployment Through Microservices Containers",
@@ -313,7 +321,7 @@
       "type": "journal-article",
       "doi": "10.1504/IJCAT.2021.117303",
       "url": "https://doi.org/10.1504/IJCAT.2021.117303",
-      "orcid_put_code": 106938765
+      "orcid_put_code": 218833243
     },
     {
       "title": "Design and Analyses of Dual-band Microstrip Patch Antennas for Wireless Communications",
@@ -380,12 +388,28 @@
       "orcid_put_code": 212155668
     },
     {
+      "title": "Designing of Smart Drip Irrigation System for Remote hilly Areas",
+      "year": 2018,
+      "type": "journal-article",
+      "doi": "",
+      "url": "https://www.webofscience.com/wos/woscc/full-record/WOS:000482637900017",
+      "orcid_put_code": 218833246
+    },
+    {
       "title": "Designing of smart drip irrigation system for remote hilly areas",
       "year": 2018,
       "type": "conference-paper",
       "doi": "10.1109/PDGC.2018.8745934",
       "url": "https://doi.org/10.1109/PDGC.2018.8745934",
       "orcid_put_code": 106938767
+    },
+    {
+      "title": "COMPARATIVE ANALYSES FOR RCS OF 10 GHz PATCH ANTENNA USING SHORTED STUBS METAMATERIAL ABSORBER",
+      "year": 2018,
+      "type": "journal-article",
+      "doi": "",
+      "url": "https://www.webofscience.com/wos/woscc/full-record/WOS:000454032200007",
+      "orcid_put_code": 218833245
     },
     {
       "title": "Comparative analyses for rcs of 10 ghz patch antenna using shorted stubs metamaterial absorber",
@@ -404,6 +428,14 @@
       "orcid_put_code": 212155669
     },
     {
+      "title": "Triple Band Regular Decagon Shaped Metamaterial Absorber for X-Band Applications",
+      "year": 2017,
+      "type": "journal-article",
+      "doi": "",
+      "url": "https://www.webofscience.com/wos/woscc/full-record/WOS:000427423100083",
+      "orcid_put_code": 218833250
+    },
+    {
       "title": "Triple band regular decagon shaped metamaterial absorber for X-band applications",
       "year": 2017,
       "type": "conference-paper",
@@ -418,6 +450,14 @@
       "doi": "DOI: 10.1109/DeSE.2017.18",
       "url": "https://doi.org/DOI: 10.1109/DeSE.2017.18",
       "orcid_put_code": 43800248
+    },
+    {
+      "title": "3-D Cylindrical Shaped Frequency Selective Surface",
+      "year": 2017,
+      "type": "journal-article",
+      "doi": "",
+      "url": "https://www.webofscience.com/wos/woscc/full-record/WOS:000426448800007",
+      "orcid_put_code": 218833251
     },
     {
       "title": "3-D cylindrical shaped frequency selective surface",
